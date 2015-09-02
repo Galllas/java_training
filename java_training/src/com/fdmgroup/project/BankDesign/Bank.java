@@ -70,11 +70,11 @@ public class Bank {
 		switch(type){
 		case BUSINESS:
 			Customer customerB = new BusinessCustomer(name, address, taxID);
-			customers.put(customerB.getCustomerID(), customerB);
+			customers.put(customerB.getCustomerId(), customerB);
 			break;
 		case PERSONAL:
 			Customer customerP = new PersonalCustomer(name, address, taxID);			
-			customers.put(customerP.getCustomerID(), customerP);			
+			customers.put(customerP.getCustomerId(), customerP);			
 			break;
 		}
 	}
@@ -92,13 +92,13 @@ public class Bank {
 		switch(type){
 		case CHECKING:
 			Account accountC = new CheckingAccount(customerID, balance);
-			accounts.put(accountC.getAccountID(), accountC);
-			customers.get(customerID).addAccountID(accountC.getAccountID());
+			accounts.put(accountC.getAccountId(), accountC);
+			customers.get(customerID).addAccountId(accountC.getAccountId());
 			break;
 		case SAVINGS:
 			Account accountS = new SavingsAccount(customerID, balance);
-			accounts.put(accountS.getAccountID(), accountS);
-			customers.get(customerID).addAccountID(accountS.getAccountID());
+			accounts.put(accountS.getAccountId(), accountS);
+			customers.get(customerID).addAccountId(accountS.getAccountId());
 			break;
 		}
 	}
@@ -127,18 +127,19 @@ public class Bank {
 		}
 	}		
 	
-	public void resetAccounts(int customerID, BigDecimal amount){
-		customers.get(customerID).resetAcounts(this, amount);
-	}		
+//	public void resetAccounts(int customerID, BigDecimal amount){
+//		customers.get(customerID).resetAcounts(this, amount);
+//	}		
 	
 	public void removeCustomer(int customerID){
-		for (int accountID : customers.get(customerID).getAccountIDs()){
+		for (int accountID : customers.get(customerID).getAccountIds()){
 			accounts.remove(accountID);
 		}
 		customers.remove(customerID);
 	}
 	
-	
+//	PersonalAccount psa = new CheckingAccount(0, null);
+//	psa.resetAllAccounts();
 
 
 	/**
@@ -185,7 +186,7 @@ public class Bank {
 		System.out.println("Customers in the bank:");
 		
 		for (Customer customer : bank.customers.values()){
-		System.out.println(customer.getCustomerID() + " " + customer.getName() + " " + customer.getAddress() + " " + customer.getTaxID() + " " +customer.getClass());
+		System.out.println(customer.getCustomerId() + " " + customer.getName() + " " + customer.getAddress() + " " + customer.getTaxId() + " " +customer.getClass());
 		}
 	
 		System.out.println(" ");
@@ -194,10 +195,10 @@ public class Bank {
 		
 		for (Account account : bank.accounts.values()){
 			if (account instanceof SavingsAccount){
-		System.out.println(account.getCustomerID() + " " + account.getAccountID() + " " + account.getBalance() + " " +((SavingsAccount)account).getInterestRate() + " "+account.getClass());
+		System.out.println(account.getCustomerId() + " " + account.getAccountId() + " " + account.getBalance() + " " +((SavingsAccount)account).getInterestRate() + " "+account.getClass());
 		}
 			else{
-				System.out.println(account.getCustomerID() + " " + account.getAccountID() + " " + account.getBalance() + " " +((CheckingAccount)account).getNextCheck() + " "+account.getClass());	
+				System.out.println(account.getCustomerId() + " " + account.getAccountId() + " " + account.getBalance() + " " +((CheckingAccount)account).getNextCheck() + " "+account.getClass());	
 			}
 		}
 				
@@ -218,8 +219,8 @@ public class Bank {
 		bank.correctBalance(1000, BigDecimal.valueOf(60000));
 		bank.depositMoney(1005, BigDecimal.valueOf(10000));
 		bank.requestCheck(1000, 100);
-		bank.resetAccounts(2000000, BigDecimal.valueOf(1000));
-		bank.resetAccounts(2000007, BigDecimal.valueOf(1000));
+//		bank.resetAccounts(2000000, BigDecimal.valueOf(1000));
+//		bank.resetAccounts(2000007, BigDecimal.valueOf(1000));
 		bank.removeCustomer(2000014);
 		bank.withdrawMoney(1000, BigDecimal.valueOf(3000));
 
@@ -227,7 +228,7 @@ public class Bank {
 		System.out.println("Customers in the bank:");
 		
 		for (Customer customer : bank.customers.values()){
-		System.out.println(customer.getCustomerID() + " " + customer.getName() + " " + customer.getAddress() + " " + customer.getTaxID() + " " +customer.getClass());
+		System.out.println(customer.getCustomerId() + " " + customer.getName() + " " + customer.getAddress() + " " + customer.getTaxId() + " " +customer.getClass());
 		}
 	
 		System.out.println(" ");
@@ -236,10 +237,10 @@ public class Bank {
 		
 		for (Account account : bank.accounts.values()){
 			if (account instanceof SavingsAccount){
-		System.out.println(account.getCustomerID() + " " + account.getAccountID() + " " + account.getBalance() + " " +((SavingsAccount)account).getInterestRate() + " "+account.getClass());
+		System.out.println(account.getCustomerId() + " " + account.getAccountId() + " " + account.getBalance() + " " +((SavingsAccount)account).getInterestRate() + " "+account.getClass());
 		}
 			else{
-				System.out.println(account.getCustomerID() + " " + account.getAccountID() + " " + account.getBalance() + " " +((CheckingAccount)account).getNextCheck() + " "+account.getClass());	
+				System.out.println(account.getCustomerId() + " " + account.getAccountId() + " " + account.getBalance() + " " +((CheckingAccount)account).getNextCheck() + " "+account.getClass());	
 			}
 		}	
 		

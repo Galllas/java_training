@@ -3,7 +3,7 @@ package com.fdmgroup.assignment.ObserverPattern;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RedDress implements Observable {
+public class Book implements Observable {
 
 	private List<Observer> users = new ArrayList<Observer>();
 	private boolean inStock = true;

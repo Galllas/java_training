@@ -11,11 +11,11 @@ public class User implements Observer {
 	
 	@Override
 	public void update() {
-		buyDress();
+		System.out.println("New!");
 	}
 
-	public void buyDress(){
-		System.out.println("New Red Dress!");
+	public void buyBook(){
+		
 	}
 	
 	public void unsubscribe(){

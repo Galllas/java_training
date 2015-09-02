@@ -4,11 +4,11 @@ public class ObserverPatternExample {
 
 	public static void main(String[] args) {
 		
-		RedDress rd = new RedDress();
-		User u1 = new User(rd);
-		User u2 = new User(rd);
-		User u3 = new User(rd);
-		rd.setInStock(true);
+		Book hdj = new Book();
+		User u1 = new User(hdj);
+		User u2 = new User(hdj);
+		User u3 = new User(hdj);
+		hdj.setInStock(true);
 
 	}
 

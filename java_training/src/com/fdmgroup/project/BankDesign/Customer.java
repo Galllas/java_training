@@ -10,45 +10,45 @@ import java.util.List;
  *
  */
 
-public abstract class Customer implements ResetAccounts {
+public abstract class Customer implements Company, Person {
 	
 	private static int INITIAL_ID = 2000000;
-	private static int currentID = INITIAL_ID;	
+	private static int currentId = INITIAL_ID;	
 	private static int INCREMENT = 7;
-	private int customerID;
+	private int customerId;
 	private String name;
 	private String address;
-	private String taxID;
+	private String taxId;
 
 	/*
 	 * Maintain a list of all the related accounts to customer
 	 */
 	// consider changing ref to List<Integer>
-	private List<Integer> accountIDs = new ArrayList<Integer>();
+	private List<Integer> accountIds = new ArrayList<Integer>();
 	
-	protected Customer(String name, String address, String taxID){
-		this.setCustomerID(Customer.getCurrentID());
+	protected Customer(String name, String address, String taxId){
+		this.setCustomerId(Customer.getCurrentId());
 		this.setName(name);
 		this.setAddress(address);
-		this.setTaxID(taxID);
-		this.setAccountIDs();
-		Customer.setCurrentID();
+		this.setTaxId(taxId);
+		this.setAccountIds();
+		Customer.setCurrentId();
 	}
 	
-	public static void setCurrentID() {
-		Customer.currentID = Customer.currentID + INCREMENT;
+	public static void setCurrentId() {
+		Customer.currentId = Customer.currentId + INCREMENT;
 	}
 
-	public static int getCurrentID() {
-		return currentID;
+	public static int getCurrentId() {
+		return currentId;
 	}
 	
-	public int getCustomerID() {
-		return customerID;
+	public int getCustomerId() {
+		return customerId;
 	}
 	
-	public void setCustomerID(int customerID) {
-		this.customerID = customerID;
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
 	}
 	
 	public String getName() {
@@ -67,24 +67,24 @@ public abstract class Customer implements ResetAccounts {
 		this.address = address;
 	}
 	
-	public String getTaxID() {
-		return taxID;
+	public String getTaxId() {
+		return taxId;
 	}
 	
-	public void setTaxID(String taxID) {
-		this.taxID = taxID;
+	public void setTaxId(String taxId) {
+		this.taxId = taxId;
 	}
 	
-	public List<Integer> getAccountIDs() {
-		return accountIDs;
+	public List<Integer> getAccountIds() {
+		return accountIds;
 	}
 	
-	public void setAccountIDs() {
-		this.accountIDs = new ArrayList<Integer>();
+	public void setAccountIds() {
+		this.accountIds = new ArrayList<Integer>();
 	}
 	
-	public void addAccountID(int accountID) {
-		this.accountIDs.add(accountID);
+	public void addAccountId(int accountId) {
+		this.accountIds.add(accountId);
 	}	
 	
 

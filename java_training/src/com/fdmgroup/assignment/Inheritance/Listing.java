@@ -2,18 +2,18 @@ package com.fdmgroup.assignment.Inheritance;
 
 public abstract class Listing {
 	
-	private String listingID;
+	private String listingId;
 	private String address;
-	private String brokerID;
+	private String brokerId;
 	
 	public Listing(String listingID, String address, String brokerID){
-		this.listingID = listingID;
+		this.listingId = listingID;
 		this.address = address;
-		this.brokerID = brokerID;
+		this.brokerId = brokerID;
 	}
 	
 	public String getListingID() {
-		return listingID;
+		return listingId;
 	}
 	
 	public String getAddress() {
@@ -21,11 +21,12 @@ public abstract class Listing {
 	}
 	
 	public String getBrokerID() {
-		return brokerID;
+		return brokerId;
 	}
-
-	public void getProfile(){
-
+	
+	public String getProfile(){
+		return  this.getListingID() + " " + this.getAddress() + " " + 
+				this.getBrokerID();
 	}
 	
 	

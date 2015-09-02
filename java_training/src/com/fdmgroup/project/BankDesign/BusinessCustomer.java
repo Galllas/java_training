@@ -10,15 +10,23 @@ import java.math.BigDecimal;
 
 public class BusinessCustomer extends Customer  {
 
-	protected BusinessCustomer(String name, String address, String taxID) {
-		super(name, address, taxID);
+	protected BusinessCustomer(String name, String address, String taxId) {
+		super(name, address, taxId);
 	}
 
 	@Override
-	public void resetAcounts(Bank bank, BigDecimal amount) {
-		for (int accountID : this.getAccountIDs() ){
-			bank.getAccounts().get(accountID).setBalance( bank.getAccounts().get(accountID).getBalance().add(amount));
+	public void depositAllAcounts(Bank bank, BigDecimal amount) {
+		for (int accountId : this.getAccountIds() ){
+			bank.getAccounts().get(accountId).setBalance(bank.getAccounts().get(accountId).getBalance().add(amount));
 		}
 	}
+
+	@Override
+	public void resetAllAccounts(Bank bank) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 }
 

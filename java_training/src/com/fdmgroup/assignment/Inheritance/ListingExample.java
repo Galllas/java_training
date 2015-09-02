@@ -12,8 +12,8 @@ public class ListingExample {
 		
 		System.out.println(" ");
 		
-		rl.getProfile();
-		sl.getProfile();
+		System.out.println(rl.getProfile());
+		System.out.println(sl.getProfile());
 		
 	}
 }

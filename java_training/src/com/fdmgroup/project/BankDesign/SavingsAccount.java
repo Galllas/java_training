@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  *
  */
 
-public class SavingsAccount extends Account{
+public class SavingsAccount extends Account {
 
 	private Number INITIAL_INTERESTRATE = 0;
 	private Number interestRate = INITIAL_INTERESTRATE;
@@ -25,12 +25,20 @@ public class SavingsAccount extends Account{
 	public void setInterestRate(Number interestRate) {
 		this.interestRate = interestRate;
 	}
-	
+
+	@Override
 	public void withdrawMoney(BigDecimal balance) {
-		if (this.getBalance().subtract(balance).compareTo(BigDecimal.ZERO) >= 0){
-			this.setBalance(this.getBalance().subtract(balance));			
-		} 
+		// TODO Auto-generated method stub
+		
 	}
+
+	@Override
+	public void depositMoney(BigDecimal balance) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 	
 
 }

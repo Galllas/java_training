@@ -32,9 +32,20 @@ public class CheckingAccount extends Account {
 		this.nextCheck += amount;
 		return currentNum;
 	}
-	
+
+	@Override
 	public void withdrawMoney(BigDecimal balance) {
-			this.setBalance(this.getBalance().subtract(balance));		
+		// TODO Auto-generated method stub
+		
 	}
+
+	@Override
+	public void depositMoney(BigDecimal balance) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
 	
 }

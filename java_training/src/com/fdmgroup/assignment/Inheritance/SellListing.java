@@ -21,9 +21,9 @@ public class SellListing extends Listing {
 		return builtyear;
 	}
 
-	public void getProfile(){
-		System.out.println(this.getListingID() + " " + this.getAddress() + " " + 
-				this.getBrokerID() + " " + this.getPrice() + " " + this.getBuiltyear());
+	public String getProfile(){
+		return this.getListingID() + " " + this.getAddress() + " " + 
+				this.getBrokerID() + " " + this.getPrice() + " " + this.getBuiltyear();
 	}
 
 }

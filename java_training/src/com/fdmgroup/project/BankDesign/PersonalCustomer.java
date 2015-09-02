@@ -15,10 +15,18 @@ public class PersonalCustomer extends Customer{
 	}
 
 	@Override
-	public void resetAcounts(Bank bank, BigDecimal amount) {
-		for (int accountID : this.getAccountIDs() ){
-			bank.getAccounts().get(accountID).setBalance( BigDecimal.ZERO);		
+	public void resetAllAccounts(Bank bank) {
+		for (int accountID : this.getAccountIds() ){
+			bank.getAccounts().get(accountID).setBalance(BigDecimal.ZERO);		
 		}
 	}
+
+	@Override
+	public void depositAllAcounts(Bank bank, BigDecimal amount) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 	
 }

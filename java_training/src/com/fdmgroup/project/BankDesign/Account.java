@@ -9,60 +9,52 @@ import java.math.BigDecimal;
  *
  */
 
-public abstract class Account {
+public abstract class Account implements BusinessAccount, PersonalAccount {
 
 	private static int INITIAL_ID = 1000;
-	private static int currentID = INITIAL_ID;
+	private static int currentId = INITIAL_ID;
 	private static int INCREMENT = 5;
-	private int customerID;
-	private int accountID;
+	private int customerId;
+	private int accountId;
 	private BigDecimal balance;
 	
-	protected Account(int customerID, BigDecimal balance){
-		this.setCustomerID(customerID);
-		this.setAccountID(Account.getCurrentID());
+	protected Account(int customerId, BigDecimal balance){
+		this.setCustomerId(customerId);
+		this.setAccountId(Account.getCurrentId());
 		this.setBalance(balance);
-		Account.setCurrentID();
-	}
-	
-	public static void setCurrentID() {
-		Account.currentID = Account.currentID + INCREMENT;
+		Account.setCurrentId();
 	}
 
-	public void setCustomerID(int customerID) {
-		this.customerID = customerID;
+	public static void setCurrentId() {
+		Account.currentId = Account.currentId + INCREMENT;
 	}
 
-	public static int getCurrentID() {
-		return currentID;
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	public static int getCurrentId() {
+		return currentId;
 	}
 	
-	public void setAccountID(int accountID) {
-		this.accountID = accountID;
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
 	}
 		
-	public int getCustomerID() {
-		return customerID;
+	public int getCustomerId() {
+		return customerId;
 	}
 	
-	public int getAccountID() {
-		return accountID;
+	public int getAccountId() {
+		return accountId;
 	}
 	
 	public BigDecimal getBalance() {
 		return balance;
 	}
 	
-	public void setBalance(BigDecimal balance){
+	public void setBalance(BigDecimal balance) {
 		this.balance = balance;
 	}
 	
-	public void withdrawMoney(BigDecimal balance) {
-	
-	}
-	
-	public void depositMoney(BigDecimal balance) {
-		this.balance = this.balance.add(balance);
-	}
-		
 }
