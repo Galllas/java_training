@@ -35,17 +35,13 @@ public class CheckingAccount extends Account implements BusinessAccount, Persona
 
 	@Override
 	public void withdrawMoney(BigDecimal balance) {
-		// TODO Auto-generated method stub
-		
+		this.setBalance(this.getBalance().subtract(balance));
 	}
 
 	@Override
 	public void depositMoney(BigDecimal balance) {
-		// TODO Auto-generated method stub
-		
+		this.setBalance(this.getBalance().add(balance));
 	}
-
-
 
 	
 }

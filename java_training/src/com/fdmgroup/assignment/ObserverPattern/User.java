@@ -11,7 +11,7 @@ public class User implements Observer {
 	
 	@Override
 	public void update() {
-		System.out.println("New!");
+		System.out.println("New Book!");
 	}
 
 	public void buyBook(){

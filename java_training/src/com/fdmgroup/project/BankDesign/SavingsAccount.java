@@ -28,13 +28,14 @@ public class SavingsAccount extends Account implements BusinessAccount, Personal
 
 	@Override
 	public void withdrawMoney(BigDecimal balance) {
-		// TODO Auto-generated method stub
-		
+		if (this.getBalance().subtract(balance).compareTo(BigDecimal.ZERO) >= 0){
+			this.setBalance(this.getBalance().subtract(balance));			
+		} 
 	}
 
 	@Override
 	public void depositMoney(BigDecimal balance) {
-		// TODO Auto-generated method stub
+		this.setBalance(this.getBalance().add(balance));
 		
 	}
 

@@ -17,7 +17,7 @@ public class PersonalCustomer extends Customer implements Company, Person {
 	@Override
 	public void resetAllAccounts(Bank bank) {
 		for (int accountID : this.getAccountIds() ){
-			bank.getAccounts().get(accountID).setBalance(BigDecimal.ZERO);		
+			bank.getPersonalAccounts().get(accountID).setBalance(BigDecimal.ZERO);		
 		}
 	}
 

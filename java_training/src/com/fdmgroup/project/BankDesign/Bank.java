@@ -7,14 +7,16 @@ import java.util.Map;
 
 /**
  * This is the Bank Design for Java Week 1, which simulates a bank can maintain and manipulate customers and accounts data.
- * Two abstract classes Customer and Account are created to track IDs, keep fundamental variables and methods;
+ * Two abstract classes Customer and Account are created to track IDs, keep fundamental variables;
  * Customer has customer ID, name, address and taxId, can deposit and withdraw money, as well as correct balance;
  * Account has account ID, customer ID, balance, interest rate for savings accounts, and checking number for checking accounts.
- * One interface is used to give different accounts manipulation methods with different types of customers,
- * Business customer can add same amount to all accounts, while personal customer can reset the accounts balance to 0.
+ * AcocuntBasic and CustomerBasic interfaces are provided to maintain basic methods;
+ * BusinessAccount and PersonalAccount are extended from AccountBasic and implemented by checking and saving accounts
+ * Company and Person are extended from CustomerBasic and implemented by business and personal customers
+ * Company can add same amount to all accounts, while person can reset the accounts balance to 0.
  * Two enums are created to hold customer and account types information separately.
  * 
- * @author gang.zhao, August 30, 2015
+ * @author gang.zhao, September 3, 2015
  *
  */
 
@@ -29,8 +31,10 @@ public class Bank {
 	 * @return
 	 */
 	
-	private Map<Integer, Customer> customers = new HashMap<Integer, Customer>();
-	private Map<Integer, Account> accounts = new HashMap<Integer, Account>();
+	private Map<Integer, Company> companies = new HashMap<Integer, Company>();
+	private Map<Integer, Person> persons = new HashMap<Integer, Person>();
+	private Map<Integer, BusinessAccount> businessAccounts = new HashMap<Integer, BusinessAccount>();
+	private Map<Integer, PersonalAccount> personalAccounts = new HashMap<Integer, PersonalAccount>();
 	
 	public String getName() {
 		return Name;
@@ -39,42 +43,43 @@ public class Bank {
 	public void setName(String name) {
 		Name = name;
 	}
-
-	public Map<Integer, Customer> getCustomers() {
-		return customers;
+	
+	public Map<Integer, Company> getCompanies() {
+		return companies;
 	}
 
-	public void setCustomers(Map<Integer, Customer> customers) {
-		this.customers = customers;
+	public Map<Integer, Person> getPersons() {
+		return persons;
 	}
 
-	public Map<Integer, Account> getAccounts() {
-		return accounts;
+	public Map<Integer, BusinessAccount> getBusinessAccounts() {
+		return businessAccounts;
 	}
 
-	public void setAccounts(Map<Integer, Account> accounts) {
-		this.accounts = accounts;
+	public Map<Integer, PersonalAccount> getPersonalAccounts() {
+		return personalAccounts;
 	}
+
 	
 	/**
 	 * This function can add customer to the bank given type of the customer, name, address and TaxID.
 	 * @param typename  "BUSINESS" or "PERSONAL"
 	 * @param name      customer name
 	 * @param address   customer address 
-	 * @param taxID     customer TaxID
+	 * @param taxId     customer TaxID
 	 */
 	
-	public void addCustomer(String typename, String name, String address, String taxID){
+	public void addCustomer(String typename, String name, String address, String taxId){
 		CustomerType type = CustomerType.valueOf(typename);
 		
 		switch(type){
 		case BUSINESS:
-			Customer customerB = new BusinessCustomer(name, address, taxID);
-			customers.put(customerB.getCustomerId(), customerB);
+			Company customerB = new BusinessCustomer(name, address, taxId);
+			companies.put(customerB.getCustomerId(), customerB);
 			break;
 		case PERSONAL:
-			Customer customerP = new PersonalCustomer(name, address, taxID);			
-			customers.put(customerP.getCustomerId(), customerP);			
+			Person customerP = new PersonalCustomer(name, address, taxId);			
+			persons.put(customerP.getCustomerId(), customerP);			
 			break;
 		}
 	}
@@ -82,65 +87,120 @@ public class Bank {
 	/**
 	 * This function can add account to customer when given type of the account, customer ID and initial balance.
 	 * @param typename    "CHECKING" or "SAVINGS"
-	 * @param customerID  the owner ID of the account
+	 * @param customerId  the owner ID of the account
 	 * @param balance     initial balance of the account
 	 */
 	
-	public void addAccount(String typename, int customerID, BigDecimal balance){
+	public void addAccount(String typename, int customerId, BigDecimal balance){
 		AccountType type = AccountType.valueOf(typename);
-		
+		if (companies.containsKey(customerId)){
 		switch(type){
 		case CHECKING:
-			Account accountC = new CheckingAccount(customerID, balance);
-			accounts.put(accountC.getAccountId(), accountC);
-			customers.get(customerID).addAccountId(accountC.getAccountId());
+			BusinessAccount accountC = new CheckingAccount(customerId, balance);
+			businessAccounts.put(accountC.getAccountId(), accountC);
+			companies.get(customerId).addAccountId(accountC.getAccountId());
 			break;
 		case SAVINGS:
-			Account accountS = new SavingsAccount(customerID, balance);
-			accounts.put(accountS.getAccountId(), accountS);
-			customers.get(customerID).addAccountId(accountS.getAccountId());
+			BusinessAccount accountS = new SavingsAccount(customerId, balance);
+			businessAccounts.put(accountS.getAccountId(), accountS);
+			companies.get(customerId).addAccountId(accountS.getAccountId());
 			break;
+		}
+		}
+		else if (persons.containsKey(customerId)){
+			switch(type){
+			case CHECKING:
+				PersonalAccount accountC = new CheckingAccount(customerId, balance);
+				personalAccounts.put(accountC.getAccountId(), accountC);
+				persons.get(customerId).addAccountId(accountC.getAccountId());
+				break;
+			case SAVINGS:
+				PersonalAccount accountS = new SavingsAccount(customerId, balance);
+				personalAccounts.put(accountS.getAccountId(), accountS);
+				persons.get(customerId).addAccountId(accountS.getAccountId());
+				break;
+			}	
 		}
 	}
 	
-//	public void withdrawMoney(int accountID, BigDecimal amount){
-//		accounts.get(accountID).withdrawMoney(amount);
-//	}
-//	
-//	public void depositMoney(int accountID, BigDecimal amount){
-//		accounts.get(accountID).depositMoney(amount);
-//	}
+	public void withdrawMoney(int accountId, BigDecimal amount){
+		if (businessAccounts.containsKey(accountId))
+		{
+			businessAccounts.get(accountId).withdrawMoney(amount);
+	    }
+		else if (personalAccounts.containsKey(accountId))
+		{
+			personalAccounts.get(accountId).withdrawMoney(amount);
+		}
+	}
 	
-	public void correctBalance(int accountID, BigDecimal amount){
-		accounts.get(accountID).setBalance(amount);
+	public void depositMoney(int accountId, BigDecimal amount){
+		if (businessAccounts.containsKey(accountId))
+		{
+			businessAccounts.get(accountId).depositMoney(amount);
+	    }
+		else if (personalAccounts.containsKey(accountId))
+		{
+			personalAccounts.get(accountId).depositMoney(amount);
+		}
+	}
+	
+	public void correctBalance(int accountId, BigDecimal amount){
+		if (businessAccounts.containsKey(accountId))
+		{
+			businessAccounts.get(accountId).setBalance(amount);
+	    }
+		else if (personalAccounts.containsKey(accountId))
+		{
+			personalAccounts.get(accountId).setBalance(amount);
+		}
 	}
 
-	public void requestCheck(int accountID, int amount){
-		if(accounts.get(accountID) instanceof CheckingAccount){
-		((CheckingAccount)accounts.get(accountID)).requestCheck(amount);
+	public void requestCheck(int accountId, int amount){
+		if( businessAccounts.containsKey(accountId) && businessAccounts.get(accountId) instanceof CheckingAccount){
+			((CheckingAccount) businessAccounts.get(accountId)).requestCheck(amount);
+		}
+		else if (personalAccounts.containsKey(accountId) && personalAccounts.get(accountId) instanceof CheckingAccount){
+			((CheckingAccount) businessAccounts.get(accountId)).requestCheck(amount);			
 		}
 	}	
 	
-	public void setInterestRate(int accountID, Number amount){
-		if (accounts.get(accountID) instanceof SavingsAccount){
-		((SavingsAccount)accounts.get(accountID)).setInterestRate(amount);
+	public void setInterestRate(int accountId, Number amount){
+		if (businessAccounts.containsKey(accountId) && businessAccounts.get(accountId) instanceof SavingsAccount){
+			((SavingsAccount)businessAccounts.get(accountId)).setInterestRate(amount);
+		}
+		else if (personalAccounts.containsKey(accountId) && personalAccounts.get(accountId) instanceof SavingsAccount){
+			((SavingsAccount)businessAccounts.get(accountId)).setInterestRate(amount);			
 		}
 	}		
 	
-//	public void resetAccounts(int customerID, BigDecimal amount){
-//		customers.get(customerID).resetAcounts(this, amount);
-//	}		
-	
-	public void removeCustomer(int customerID){
-		for (int accountID : customers.get(customerID).getAccountIds()){
-			accounts.remove(accountID);
+	public void depositAllAcounts(int customerId, BigDecimal amount){
+		if (companies.containsKey(customerId)){
+			companies.get(customerId).depositAllAcounts(this, amount);
 		}
-		customers.remove(customerID);
+	}		
+
+	public void resetAllAccounts(int customerId){
+		if (persons.containsKey(customerId)){
+			persons.get(customerId).resetAllAccounts(this);
+		}
+	}	
+	
+	public void removeCustomer(int customerId){
+		if (companies.containsKey(customerId)){
+			for (int accountId : companies.get(customerId).getAccountIds()){
+				businessAccounts.remove(accountId);
+			}
+			companies.remove(customerId);
+		}
+		else if (persons.containsKey(customerId)){
+			for (int accountId : persons.get(customerId).getAccountIds()){
+				personalAccounts.remove(accountId);
+			}
+			persons.remove(customerId);			
+		}
 	}
 	
-//	PersonalAccount psa = new CheckingAccount(0, null);
-//	psa.resetAllAccounts();
-
 
 	/**
 	 * The front door of the bank.
@@ -185,7 +245,11 @@ public class Bank {
 		
 		System.out.println("Customers in the bank:");
 		
-		for (Customer customer : bank.customers.values()){
+		for (Company customer : bank.companies.values()){
+		System.out.println(customer.getCustomerId() + " " + customer.getName() + " " + customer.getAddress() + " " + customer.getTaxId() + " " +customer.getClass());
+		}
+		
+		for (Person customer : bank.persons.values()){
 		System.out.println(customer.getCustomerId() + " " + customer.getName() + " " + customer.getAddress() + " " + customer.getTaxId() + " " +customer.getClass());
 		}
 	
@@ -193,7 +257,16 @@ public class Bank {
 		
 		System.out.println("Accounts information of the customers:");
 		
-		for (Account account : bank.accounts.values()){
+		for (BusinessAccount account : bank.businessAccounts.values()){
+			if (account instanceof SavingsAccount){
+		System.out.println(account.getCustomerId() + " " + account.getAccountId() + " " + account.getBalance() + " " +((SavingsAccount)account).getInterestRate() + " "+account.getClass());
+		}
+			else{
+				System.out.println(account.getCustomerId() + " " + account.getAccountId() + " " + account.getBalance() + " " +((CheckingAccount)account).getNextCheck() + " "+account.getClass());	
+			}
+		}
+		
+		for (PersonalAccount account : bank.personalAccounts.values()){
 			if (account instanceof SavingsAccount){
 		System.out.println(account.getCustomerId() + " " + account.getAccountId() + " " + account.getBalance() + " " +((SavingsAccount)account).getInterestRate() + " "+account.getClass());
 		}
@@ -217,17 +290,22 @@ public class Bank {
 
 		bank.setInterestRate(1005, 0.1);
 		bank.correctBalance(1000, BigDecimal.valueOf(60000));
-	//	bank.depositMoney(1005, BigDecimal.valueOf(10000));
+		bank.depositMoney(1005, BigDecimal.valueOf(10000));
 		bank.requestCheck(1000, 100);
-//		bank.resetAccounts(2000000, BigDecimal.valueOf(1000));
-//		bank.resetAccounts(2000007, BigDecimal.valueOf(1000));
+		bank.depositAllAcounts(2000000, BigDecimal.valueOf(1000));
+		bank.resetAllAccounts(2000007);
 		bank.removeCustomer(2000014);
-		//bank.withdrawMoney(1000, BigDecimal.valueOf(3000));
+		bank.withdrawMoney(1000, BigDecimal.valueOf(3000));
 
 		System.out.println(" ");
 		System.out.println("Customers in the bank:");
 		
-		for (Customer customer : bank.customers.values()){
+		
+		for (Company customer : bank.companies.values()){
+		System.out.println(customer.getCustomerId() + " " + customer.getName() + " " + customer.getAddress() + " " + customer.getTaxId() + " " +customer.getClass());
+		}
+		
+		for (Person customer : bank.persons.values()){
 		System.out.println(customer.getCustomerId() + " " + customer.getName() + " " + customer.getAddress() + " " + customer.getTaxId() + " " +customer.getClass());
 		}
 	
@@ -235,14 +313,24 @@ public class Bank {
 		
 		System.out.println("Accounts information of the customers:");
 		
-		for (Account account : bank.accounts.values()){
+		for (BusinessAccount account : bank.businessAccounts.values()){
 			if (account instanceof SavingsAccount){
 		System.out.println(account.getCustomerId() + " " + account.getAccountId() + " " + account.getBalance() + " " +((SavingsAccount)account).getInterestRate() + " "+account.getClass());
 		}
 			else{
 				System.out.println(account.getCustomerId() + " " + account.getAccountId() + " " + account.getBalance() + " " +((CheckingAccount)account).getNextCheck() + " "+account.getClass());	
 			}
-		}	
+		}
+		
+		for (PersonalAccount account : bank.personalAccounts.values()){
+			if (account instanceof SavingsAccount){
+		System.out.println(account.getCustomerId() + " " + account.getAccountId() + " " + account.getBalance() + " " +((SavingsAccount)account).getInterestRate() + " "+account.getClass());
+		}
+			else{
+				System.out.println(account.getCustomerId() + " " + account.getAccountId() + " " + account.getBalance() + " " +((CheckingAccount)account).getNextCheck() + " "+account.getClass());	
+			}
+		}
+			
 		
 
 	}
