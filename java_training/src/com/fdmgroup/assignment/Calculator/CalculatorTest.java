@@ -15,91 +15,91 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void testone(){		
+	public void testReturnOneValue(){		
 		expression = "4";
 		assertEquals(4.0, Calculator.evaluateExp(expression), 0.0);		
 	}
 
 	@Test
-	public void testonemore(){		
+	public void testReturnOneMinusValueHasASpaceBeforValue(){		
 		expression = "- 4";
 		assertEquals(-4.0, Calculator.evaluateExp(expression), 0.0);		
 	}
 	
 	@Test
-	public void testonemore2(){		
+	public void testReturnOneMinusValue(){		
 		expression = "-4";
 		assertEquals(-4.0, Calculator.evaluateExp(expression), 0.0);		
 	}
 	
 	@Test
-	public void testtwosum(){		
+	public void testReturnTheSumOfTwoValues(){		
 		expression = "4 + 4";
 		assertEquals(8.0, Calculator.evaluateExp(expression), 0.0);		
 	}	
 	
 	@Test
-	public void testthreesum(){		
+	public void testtestReturnTheSumOfThreeValues(){		
 		expression = "4 + 2 + 4";
 		assertEquals(10.0, Calculator.evaluateExp(expression), 0.0);		
 	}			
 	
 	@Test
-	public void testfoursum(){		
+	public void testReturnTheSumOfFourValues(){		
 		expression = "4 + 2 + 4 + 5";
 		assertEquals(15.0, Calculator.evaluateExp(expression), 0.0);		
 	}	
 	
 	@Test
-	public void testmultiplesum(){		
+	public void testReturnTheSumOfMultipleValues(){		
 		expression = "4 + 2 + 4 + 5 + 10 + 20 + 30";
 		assertEquals(75.0, Calculator.evaluateExp(expression), 0.0);		
 	}	
 	
 	@Test
-	public void testtwominus(){		
+	public void testReturnOneValueMinusAnotherOne(){		
 		expression = "6 - 2";
 		assertEquals(4.0, Calculator.evaluateExp(expression), 0.0);		
 	}	
 	
 	@Test
-	public void testthreeminus(){		
+	public void testReturnOneValueMinusAnotherTwo(){		
 		expression = "16 - 2 - 4";
 		assertEquals(10.0, Calculator.evaluateExp(expression), 0.0);		
 	}	
 
 	@Test
-	public void testfourminus(){		
+	public void testReturnOneValueMinusAnotherThree(){		
 		expression = "16 - 2 - 4 - 4";
 		assertEquals(6.0, Calculator.evaluateExp(expression), 0.0);		
 	}		
 	
 	@Test
-	public void testmultipleminus(){		
+	public void testReturnOneValueMinusMultipleValues(){		
 		expression = "16 - 2 - 4 - 4 - 4 - 2";
 		assertEquals(0.0, Calculator.evaluateExp(expression), 0.0);		
 	}		
 	
 	@Test
-	public void testtwominusminus(){		
+	public void testReturnMinusValueMBySubtractOneValue(){		
 		expression = "2 - 4";
 		assertEquals(-2.0, Calculator.evaluateExp(expression), 0.0);		
 	}		
 	
 	@Test
-	public void testthreeminusminus(){		
+	public void testReturnMinusValueMBySubtractTwoValues(){		
 		expression = "2 - 4 - 4";
 		assertEquals(-6.0, Calculator.evaluateExp(expression), 0.0);		
 	}		
 	
 	@Test
-	public void testfourminusminus(){		
+	public void testReturnMinusValueMBySubtractThreeValues(){		
 		expression = "2 - 4 - 4 - 4";
 		assertEquals(-10.0, Calculator.evaluateExp(expression), 0.0);		
 	}
 	
 	@Test
-	public void tesrmultipleminusminus(){		
+	public void testReturnMinusValueMBySubtractMultipleValues(){		
 		expression = "2 - 4 - 4 - 4 - 10 - 20 - 30";
 		assertEquals(-70.0, Calculator.evaluateExp(expression), 0.0);		
 	}
