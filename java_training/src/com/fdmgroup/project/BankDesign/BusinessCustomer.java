@@ -8,7 +8,7 @@ import java.math.BigDecimal;
  *
  */
 
-public class BusinessCustomer extends Customer  {
+public class BusinessCustomer extends Customer implements Company, Person {
 
 	protected BusinessCustomer(String name, String address, String taxId) {
 		super(name, address, taxId);

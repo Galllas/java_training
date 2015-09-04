@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  *
  */
 
-public class CheckingAccount extends Account {
+public class CheckingAccount extends Account implements BusinessAccount, PersonalAccount {
 	
 	private int INITIAL_CHECKINGNUMBER = 1;
 	private int checkNumber = INITIAL_CHECKINGNUMBER;

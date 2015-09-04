@@ -103,13 +103,13 @@ public class Bank {
 		}
 	}
 	
-	public void withdrawMoney(int accountID, BigDecimal amount){
-		accounts.get(accountID).withdrawMoney(amount);
-	}
-	
-	public void depositMoney(int accountID, BigDecimal amount){
-		accounts.get(accountID).depositMoney(amount);
-	}
+//	public void withdrawMoney(int accountID, BigDecimal amount){
+//		accounts.get(accountID).withdrawMoney(amount);
+//	}
+//	
+//	public void depositMoney(int accountID, BigDecimal amount){
+//		accounts.get(accountID).depositMoney(amount);
+//	}
 	
 	public void correctBalance(int accountID, BigDecimal amount){
 		accounts.get(accountID).setBalance(amount);
@@ -217,12 +217,12 @@ public class Bank {
 
 		bank.setInterestRate(1005, 0.1);
 		bank.correctBalance(1000, BigDecimal.valueOf(60000));
-		bank.depositMoney(1005, BigDecimal.valueOf(10000));
+	//	bank.depositMoney(1005, BigDecimal.valueOf(10000));
 		bank.requestCheck(1000, 100);
 //		bank.resetAccounts(2000000, BigDecimal.valueOf(1000));
 //		bank.resetAccounts(2000007, BigDecimal.valueOf(1000));
 		bank.removeCustomer(2000014);
-		bank.withdrawMoney(1000, BigDecimal.valueOf(3000));
+		//bank.withdrawMoney(1000, BigDecimal.valueOf(3000));
 
 		System.out.println(" ");
 		System.out.println("Customers in the bank:");
