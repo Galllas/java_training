@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  *
  */
 
-public class SavingsAccount extends Account implements BusinessAccount, PersonalAccount {
+public class SavingsAccount extends Account  {
 
 	private Number INITIAL_INTERESTRATE = 0;
 	private Number interestRate = INITIAL_INTERESTRATE;
@@ -37,6 +37,11 @@ public class SavingsAccount extends Account implements BusinessAccount, Personal
 	public void depositMoney(BigDecimal balance) {
 		this.setBalance(this.getBalance().add(balance));
 		
+	}
+
+	@Override
+	public int requestCheck(int amount) {
+		return 0;
 	}
 
 

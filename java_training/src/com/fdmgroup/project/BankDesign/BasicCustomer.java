@@ -1,8 +1,9 @@
 package com.fdmgroup.project.BankDesign;
 
+import java.math.BigDecimal;
 import java.util.List;
 
-public interface CustomerBasic {
+public interface BasicCustomer {
 
 	public int getCustomerId();
 	
@@ -15,4 +16,8 @@ public interface CustomerBasic {
 	public List<Integer> getAccountIds();
 	
 	public void addAccountId(int accountId);
+
+	public void depositAllAcounts(Bank bank, BigDecimal amount);
+
+	public void resetAllAccounts(Bank bank);
 }

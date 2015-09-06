@@ -10,7 +10,7 @@ import java.util.List;
  *
  */
 
-public abstract class Customer {
+public abstract class Customer implements Company, Person {
 	
 	private static int INITIAL_ID = 2000000;
 	private static int currentId = INITIAL_ID;	

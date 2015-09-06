@@ -8,7 +8,7 @@ import java.math.BigDecimal;
  *
  */
 
-public class PersonalCustomer extends Customer implements Company, Person {
+public class PersonalCustomer extends Customer  {
 	
 	protected PersonalCustomer(String name, String address, String taxID) {
 		super(name, address, taxID);
@@ -17,7 +17,7 @@ public class PersonalCustomer extends Customer implements Company, Person {
 	@Override
 	public void resetAllAccounts(Bank bank) {
 		for (int accountID : this.getAccountIds() ){
-			bank.getPersonalAccounts().get(accountID).setBalance(BigDecimal.ZERO);		
+			bank.getAccounts().get(accountID).setBalance(BigDecimal.ZERO);		
 		}
 	}
 

@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  *
  */
 
-public class CheckingAccount extends Account implements BusinessAccount, PersonalAccount {
+public class CheckingAccount extends Account {
 	
 	private int INITIAL_CHECKINGNUMBER = 1;
 	private int checkNumber = INITIAL_CHECKINGNUMBER;
@@ -41,6 +41,12 @@ public class CheckingAccount extends Account implements BusinessAccount, Persona
 	@Override
 	public void depositMoney(BigDecimal balance) {
 		this.setBalance(this.getBalance().add(balance));
+	}
+
+	@Override
+	public void setInterestRate(Number amount) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	
