@@ -27,8 +27,7 @@ public class FirstCommonAncestor {
 		if (y != null && y != p && y != q) return y;
 		
 		if (x != null && y != null) return root;
-		else if (root == p || root == q) return root;
-		else return x == null ? y :x;
+		else return x == null ? y : x;
 		
 	}
 	
