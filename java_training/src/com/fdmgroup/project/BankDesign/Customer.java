@@ -10,7 +10,7 @@ import java.util.List;
  *
  */
 
-public abstract class Customer implements Company, Person {
+public abstract class Customer {
 	
 	private int customerId;
 	private String name;

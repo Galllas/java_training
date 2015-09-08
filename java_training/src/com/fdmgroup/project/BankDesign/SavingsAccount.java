@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  *
  */
 
-public class SavingsAccount extends Account  {
+public class SavingsAccount extends Account  implements BusinessAccount, PersonalAccount {
 
 	private Number INITIAL_INTERESTRATE = 0;
 	private Number interestRate = INITIAL_INTERESTRATE;

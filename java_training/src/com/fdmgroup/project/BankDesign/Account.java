@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  *
  */
 
-public abstract class Account implements BusinessAccount, PersonalAccount {
+public abstract class Account {
 
 	private int customerId;
 	private int accountId;
