@@ -14,8 +14,8 @@ public class SavingsAccount extends Account  {
 	private Number INITIAL_INTERESTRATE = 0;
 	private Number interestRate = INITIAL_INTERESTRATE;
 	
-	protected SavingsAccount(int customerID, BigDecimal balance) {
-		super(customerID, balance);
+	protected SavingsAccount(int customerId, int accountId, BigDecimal balance) {
+		super(customerId, accountId, balance);
 	}
 
 	public Number getInterestRate() {

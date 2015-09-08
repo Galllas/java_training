@@ -11,30 +11,18 @@ import java.math.BigDecimal;
 
 public abstract class Account implements BusinessAccount, PersonalAccount {
 
-	private static int INITIAL_ID = 1000;
-	private static int currentId = INITIAL_ID;
-	private static int INCREMENT = 5;
 	private int customerId;
 	private int accountId;
 	private BigDecimal balance;
 	
-	protected Account(int customerId, BigDecimal balance){
+	protected Account(int customerId, int accountId, BigDecimal balance){
 		this.setCustomerId(customerId);
-		this.setAccountId(Account.getCurrentId());
+		this.setAccountId(accountId);
 		this.setBalance(balance);
-		Account.setCurrentId();
-	}
-
-	public static void setCurrentId() {
-		Account.currentId = Account.currentId + INCREMENT;
 	}
 
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
-	}
-
-	public static int getCurrentId() {
-		return currentId;
 	}
 	
 	public void setAccountId(int accountId) {

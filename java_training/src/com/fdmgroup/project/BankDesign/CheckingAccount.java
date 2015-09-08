@@ -15,8 +15,8 @@ public class CheckingAccount extends Account {
 	private int checkNumber = INITIAL_CHECKINGNUMBER;
 	private int nextCheck = INITIAL_CHECKINGNUMBER + 1;
 	
-	protected CheckingAccount(int customerID, BigDecimal balance) {
-		super(customerID, balance);
+	protected CheckingAccount(int customerId, int accountId, BigDecimal balance) {
+		super(customerId, accountId, balance);
 	}
 	
 	public int getCheckNumber() {

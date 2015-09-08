@@ -23,7 +23,23 @@ import java.util.Map;
 
 public class Bank {
 	
-	private String Name;
+	private String name;
+	
+	private static int INITIAL_CUSTOMERID = 2000000;
+	private int customerIdIncrement = 7;
+	private static int customerId = INITIAL_CUSTOMERID;
+
+	private static int INITIAL_ACCOUNTID = 1000;
+	private int accountIdIncrement = 5;
+	private static int accountId = INITIAL_ACCOUNTID;	
+	
+	private void generateNextCustomerId(){
+		customerId += customerIdIncrement;
+	}
+	
+	private void generateNextAccountId(){
+		accountId += accountIdIncrement;
+	}
 	
 	/**
 	 *  Use HashMap to associate customer IDs and customers, as well as account IDs and accounts,
@@ -35,11 +51,11 @@ public class Bank {
 	private Map<Integer, BasicAccount> accounts = new HashMap<Integer, BasicAccount>();
 	
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	
 	public Map<Integer, BasicCustomer> getCustomers() {
@@ -64,12 +80,14 @@ public class Bank {
 		
 		switch(type){
 		case BUSINESS:
-			Company customerB = new BusinessCustomer(name, address, taxId);
+			Company customerB = new BusinessCustomer(customerId, name, address, taxId);
 			customers.put(customerB.getCustomerId(), customerB);
+			this.generateNextCustomerId();
 			break;
 		case PERSONAL:
-			Person customerP = new PersonalCustomer(name, address, taxId);			
-			customers.put(customerP.getCustomerId(), customerP);			
+			Person customerP = new PersonalCustomer(customerId, name, address, taxId);			
+			customers.put(customerP.getCustomerId(), customerP);	
+			this.generateNextCustomerId();			
 			break;
 		}
 	}
@@ -86,14 +104,16 @@ public class Bank {
 		
 		switch(type){
 		case CHECKING:
-			BusinessAccount accountC = new CheckingAccount(customerId, balance);
+			BusinessAccount accountC = new CheckingAccount(customerId, accountId, balance);
 			accounts.put(accountC.getAccountId(), accountC);
 			customers.get(customerId).addAccountId(accountC.getAccountId());
+			this.generateNextAccountId();
 			break;
 		case SAVINGS:
-			BusinessAccount accountS = new SavingsAccount(customerId, balance);
+			BusinessAccount accountS = new SavingsAccount(customerId, accountId, balance);
 			accounts.put(accountS.getAccountId(), accountS);
 			customers.get(customerId).addAccountId(accountS.getAccountId());
+			this.generateNextAccountId();
 			break;
 		}
 	}

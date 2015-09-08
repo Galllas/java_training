@@ -10,8 +10,8 @@ import java.math.BigDecimal;
 
 public class PersonalCustomer extends Customer  {
 	
-	protected PersonalCustomer(String name, String address, String taxID) {
-		super(name, address, taxID);
+	protected PersonalCustomer(int customerId, String name, String address, String taxID) {
+		super(customerId, name, address, taxID);
 	}
 
 	@Override

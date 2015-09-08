@@ -12,9 +12,6 @@ import java.util.List;
 
 public abstract class Customer implements Company, Person {
 	
-	private static int INITIAL_ID = 2000000;
-	private static int currentId = INITIAL_ID;	
-	private static int INCREMENT = 7;
 	private int customerId;
 	private String name;
 	private String address;
@@ -26,21 +23,12 @@ public abstract class Customer implements Company, Person {
 	// consider changing ref to List<Integer>
 	private List<Integer> accountIds = new ArrayList<Integer>();
 	
-	protected Customer(String name, String address, String taxId){
-		this.setCustomerId(Customer.getCurrentId());
+	protected Customer(int customerId, String name, String address, String taxId){
+		this.setCustomerId(customerId);
 		this.setName(name);
 		this.setAddress(address);
 		this.setTaxId(taxId);
 		this.setAccountIds();
-		Customer.setCurrentId();
-	}
-	
-	public static void setCurrentId() {
-		Customer.currentId = Customer.currentId + INCREMENT;
-	}
-
-	public static int getCurrentId() {
-		return currentId;
 	}
 	
 	public int getCustomerId() {
