@@ -267,3 +267,190 @@ public class Bank {
 
 	}
 }
+
+
+
+
+
+//
+//
+//
+//
+//
+//public int selectOperation(){
+//	
+//	String[] operationType = {"Add Business Customer", "Add Personal Customer", "Add Business Checking Account", 
+//			"Add Business Savings Account", "Add Personal Checking Account", "Add Personal Savings Account", "Query Customer",
+//			"Remove Customer", "Business Customer Add All", "Personal Customer Reset All", "Show All Accounts", "Query Account",
+//			"Account Deposit", "Account Withdraw", "Account Correction", "Checking Account Order Check", "Checking Account Next Check", 
+//			"Savings Account Change Saving Rate"};	
+//	
+//	String option = (String) JOptionPane.showInputDialog(null,
+//	"Would you like to add Customer or Account?",
+//	Name,
+//	JOptionPane.QUESTION_MESSAGE,
+//	null,     
+//	operationType,  
+//	operationType[0]); 
+//	
+//	return Arrays.asList(operationType).indexOf(option);
+//}
+//
+//
+//public String getInput(){
+//	
+//	  JTextField xField = new JTextField(10);
+//
+//      JPanel myPanel = new JPanel();
+//      myPanel.add(new JLabel("Value"));
+//      myPanel.add(xField);    
+//
+//      int result = JOptionPane.showConfirmDialog(null, myPanel, 
+//               "Please Enter Value", JOptionPane.OK_CANCEL_OPTION);
+//	
+//      return xField.getText();
+//}
+////
+////
+//public String[] getCustomer(){
+//	
+//	  JTextField xField = new JTextField(10);
+//      JTextField yField = new JTextField(10);
+//      JTextField zField = new JTextField(10);
+//
+//      JPanel myPanel = new JPanel();
+//      myPanel.add(new JLabel("Name:"));
+//      myPanel.add(xField);
+//      myPanel.add(Box.createVerticalStrut(15)); // a spacer
+//      myPanel.add(new JLabel("Address:"));
+//      myPanel.add(yField);
+//      myPanel.add(Box.createVerticalStrut(15)); // a spacer
+//      myPanel.add(new JLabel("TaxID:"));
+//      myPanel.add(zField);	      
+//
+//      int result = JOptionPane.showConfirmDialog(null, myPanel, 
+//               "Please Enter Customer Values", JOptionPane.OK_CANCEL_OPTION);
+////      if (result == JOptionPane.OK_OPTION) {
+////         System.out.println("x value: " + xField.getText());
+////         System.out.println("y value: " + yField.getText());
+////      }	
+//      
+//      String[] inputs = {xField.getText(), yField.getText(), zField.getText()};
+////      System.out.println(inputs);
+//      return inputs;
+//     
+//}
+//
+//
+
+//Bank bank = new Bank();
+//bank.setBank();
+//
+//int option = 0;
+//
+//while (option != -1){
+//
+//option = bank.selectOperation();
+//
+//switch (option) {
+//	
+//case 0: String[] v0 = bank.getCustomer();
+//		bank.addBusinessCustomer(v0[0], v0[1], v0[2]);
+//		JOptionPane.showMessageDialog (null, "Business Customer Added", "Title", JOptionPane.INFORMATION_MESSAGE);
+//		break;
+//case 1: String[] v1 = bank.getCustomer();
+//		bank.addPersonalCustomer(v1[0], v1[1], v1[2]);
+//		JOptionPane.showMessageDialog (null, "Personal Customer Added", "Title", JOptionPane.INFORMATION_MESSAGE);
+//		break;
+//case 2: String c2 = bank.getInput();
+//		String v2 = bank.getInput();
+//		int id2 = Integer.parseInt(c2);
+//		BigDecimal b2=new BigDecimal(v2);
+//		Account a2 = new CheckingAccount(b2);
+//		Customer cu2 = bank.getCustomer(id2);
+//		cu2.Accounts.add(a2);
+//		JOptionPane.showMessageDialog (null, "Account Added", "Title", JOptionPane.INFORMATION_MESSAGE);
+//		break;
+//case 3: String c4 = bank.getInput();
+//		String v4 = bank.getInput();
+//		int id4 = Integer.parseInt(c4);
+//		BigDecimal b4=new BigDecimal(v4);
+//		Account a4 = new SavingsAccount(b4);
+//		Customer cu4 = bank.getCustomer(id4);
+//		cu4.Accounts.add(a4);
+//		JOptionPane.showMessageDialog (null, "Account Added", "Title", JOptionPane.INFORMATION_MESSAGE);
+//		break;		
+//case 4: String c5 = bank.getInput();
+//		String v5 = bank.getInput();
+//		int id5 = Integer.parseInt(c5);
+//		BigDecimal b5=new BigDecimal(v5);
+//		Account a5 = new CheckingAccount(b5);
+//		Customer cu5 = bank.getCustomer(id5);
+//		cu5.Accounts.add(a5);
+//		JOptionPane.showMessageDialog (null, "Account Added", "Title", JOptionPane.INFORMATION_MESSAGE);
+//		break;
+//case 5: String c6 = bank.getInput();
+//		String v6 = bank.getInput();
+//		int id6 = Integer.parseInt(c6);
+//		BigDecimal b6=new BigDecimal(v6);
+//		Account a6 = new SavingsAccount(b6);
+//		Customer cu6 = bank.getCustomer(id6);
+//		cu6.Accounts.add(a6);
+//		JOptionPane.showMessageDialog (null, "Account Added", "Title", JOptionPane.INFORMATION_MESSAGE);
+//		break;					
+//case 6: String c7 = bank.getInput();
+//		int id7 = Integer.parseInt(c7);
+//		String info7 = bank.getCustomerinfo(id7);
+//		JOptionPane.showMessageDialog (null, info7, "Information", JOptionPane.INFORMATION_MESSAGE);
+//		break;
+//case 7: String c8 = bank.getInput();
+//		int id8 = Integer.parseInt(c8);
+//		bank.removeCustomer(id8);
+//		JOptionPane.showMessageDialog (null, "Customer Removed", "Title", JOptionPane.INFORMATION_MESSAGE);
+//		break;
+//case 8: String c9 = bank.getInput();
+//		String v9 = bank.getInput();
+//		int id9 = Integer.parseInt(c9);
+//		BigDecimal b9=new BigDecimal(v9);				
+//		Customer cu9 = bank.getCustomer(id9);
+//		if ( cu9 instanceof BusinessCustomer ){
+//		((BusinessCustomer) cu9).addMoney(b9);
+//		}		
+//		JOptionPane.showMessageDialog (null, "All Account Added", "Title", JOptionPane.INFORMATION_MESSAGE);
+//		break;
+//case 9: String c10 = bank.getInput();
+//		int id10 = Integer.parseInt(c10);				
+//		Customer cu10 = bank.getCustomer(id10);
+//		if ( cu10 instanceof PersonalCustomer ){
+//			((PersonalCustomer) cu10).resetBalance();
+//		}		
+//		JOptionPane.showMessageDialog (null, "All Balances Reseted", "Title", JOptionPane.INFORMATION_MESSAGE);
+//		break;
+//case 10: bank.getAccounts();
+//		 JOptionPane.showMessageDialog (null, Arrays.toString(bank.Accounts.toArray()), "Title", JOptionPane.INFORMATION_MESSAGE);
+//		 break;
+//case 11: String c12 = bank.getInput();
+//		 int id12 = Integer.parseInt(c12);
+//		 String info12 = bank.getAccountinfo(id12);
+//		 JOptionPane.showMessageDialog (null, info12, "Title", JOptionPane.INFORMATION_MESSAGE);
+//		 break;				 
+////case 12: String c13 = bank.getInput();
+////		 String v13 = bank.getInput();
+////		 int id13 = Integer.parseInt(c13);
+////		 BigDecimal b13=new BigDecimal(v13);				
+////		 Account cu13= bank.getAccount(id13);
+//
+//
+//
+//
+//
+//	}
+//
+//
+//	}
+//
+//JOptionPane.showMessageDialog (null, "Closed", bank.Name, JOptionPane.INFORMATION_MESSAGE);
+
+
+
+
