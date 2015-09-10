@@ -1,4 +1,4 @@
-package com.fdmgroup.dao;
+package com.fdmgroup.com.dao;
 
 public interface IStoreable<T> {
 

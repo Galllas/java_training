@@ -1,4 +1,4 @@
-package com.fdmgroup.dao;
+package com.fdmgroup.com.dao;
 
 import com.fdmgroup.com.business.Product;
 
