@@ -1,10 +1,10 @@
 package com.fdmgroup.assignment.CommandPattern;
 
-public class LightOnCommand implements Command {
+public class LightCommand implements Command {
 
 	Light light;
 	
-	public LightOnCommand(Light light){
+	public LightCommand(Light light){
 		this.light = light;
 	}
 	

@@ -8,7 +8,7 @@ public class RemoteControlTest {
 		
 		Light light = new Light();
 		
-		LightOnCommand lightOn = new LightOnCommand(light);
+		LightCommand lightOn = new LightCommand(light);
 		
 		remote.setCommand(lightOn);
 		

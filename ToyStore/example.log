@@ -1,3 +1,5 @@
 2015-09-10 15:47:12 ERROR ToyStore:64 - Product is in Recall Status. Product [productid=3, name=juice, description=apple, price=5.0, recallStatus=true] Quantity:30
 2015-09-10 15:47:24 ERROR ToyStore:64 - Product is in Recall Status. Mock for Product, hashCode: 9030750 Quantity:100
 2015-09-10 15:47:24 ERROR ToyStore:65 - Product is in Low Inventory. Mock for Product, hashCode: 29752800 Quantity:100 Required:200
+2015-09-10 17:25:44 ERROR ToyStore:64 - Product is in Recall Status. Mock for Product, hashCode: 13121485 Quantity:100
+2015-09-10 17:25:44 ERROR ToyStore:65 - Product is in Low Inventory. Mock for Product, hashCode: 27165481 Quantity:100 Required:200
