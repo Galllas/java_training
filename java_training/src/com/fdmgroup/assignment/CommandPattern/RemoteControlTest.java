@@ -1,16 +1,23 @@
 package com.fdmgroup.assignment.CommandPattern;
-
+/**
+ * Client
+ * @author gz
+ *
+ */
 public class RemoteControlTest {
 
 	public static void main(String[] args) {
 		
+		//Invoker
 		SimpleRemoteControl remote = new SimpleRemoteControl();
 		
+		//Receiver
 		Light light = new Light();
 		
-		LightCommand lightOn = new LightCommand(light);
+		//Concrete Command
+		LightCommand lightOnAndOff = new LightCommand(light);
 		
-		remote.setCommand(lightOn);
+		remote.setCommand(lightOnAndOff);
 		
 		remote.onButtonWasPressed();
 		remote.offButtonWasPressed();

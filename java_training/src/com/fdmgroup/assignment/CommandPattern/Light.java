@@ -1,5 +1,11 @@
 package com.fdmgroup.assignment.CommandPattern;
 
+/**
+ * Receiver
+ * @author gz
+ *
+ */
+
 public class Light {
 	
 	public void on(){

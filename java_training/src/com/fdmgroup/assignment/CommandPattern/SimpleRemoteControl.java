@@ -1,5 +1,9 @@
 package com.fdmgroup.assignment.CommandPattern;
-
+/**
+ * Invoker
+ * @author gz
+ *
+ */
 public class SimpleRemoteControl {
 
 	Command slot;

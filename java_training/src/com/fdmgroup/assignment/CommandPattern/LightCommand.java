@@ -1,5 +1,9 @@
 package com.fdmgroup.assignment.CommandPattern;
-
+/**
+ * ConcreteCommand
+ * @author gz
+ *
+ */
 public class LightCommand implements Command {
 
 	Light light;
