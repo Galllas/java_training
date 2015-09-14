@@ -3,3 +3,13 @@
 2015-09-10 15:47:24 ERROR ToyStore:65 - Product is in Low Inventory. Mock for Product, hashCode: 29752800 Quantity:100 Required:200
 2015-09-10 17:25:44 ERROR ToyStore:64 - Product is in Recall Status. Mock for Product, hashCode: 13121485 Quantity:100
 2015-09-10 17:25:44 ERROR ToyStore:65 - Product is in Low Inventory. Mock for Product, hashCode: 27165481 Quantity:100 Required:200
+2015-09-10 17:29:47 ERROR ToyStore:64 - Product is in Recall Status. Mock for Product, hashCode: 9030750 Quantity:100
+2015-09-10 17:29:47 ERROR ToyStore:65 - Product is in Low Inventory. Mock for Product, hashCode: 29752800 Quantity:100 Required:200
+2015-09-11 09:48:31 ERROR ToyStore:64 - Product is in Recall Status. Mock for Product, hashCode: 13121485 Quantity:100
+2015-09-11 09:48:31 ERROR ToyStore:65 - Product is in Low Inventory. Mock for Product, hashCode: 27165481 Quantity:100 Required:200
+2015-09-11 09:51:32 ERROR ToyStore:64 - Product is in Recall Status. Mock for Product, hashCode: 3916915 Quantity:100
+2015-09-11 09:51:32 ERROR ToyStore:65 - Product is in Low Inventory. Mock for Product, hashCode: 19432672 Quantity:100 Required:200
+2015-09-11 09:51:46 ERROR ToyStore:64 - Product is in Recall Status. Mock for Product, hashCode: 31365828 Quantity:100
+2015-09-11 09:51:46 ERROR ToyStore:65 - Product is in Low Inventory. Mock for Product, hashCode: 19647819 Quantity:100 Required:200
+2015-09-11 09:51:48 ERROR ToyStore:64 - Product is in Recall Status. Mock for Product, hashCode: 3916915 Quantity:100
+2015-09-11 09:51:48 ERROR ToyStore:65 - Product is in Low Inventory. Mock for Product, hashCode: 19432672 Quantity:100 Required:200
