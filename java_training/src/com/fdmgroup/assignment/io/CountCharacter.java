@@ -11,11 +11,13 @@ public class CountCharacter {
 	public static int countChars(String file1, char c) {
 		
 		int count = 0;
+		FileReader fr2 = null;
+		BufferedReader br = null;
 		
 		try{
 		
-		FileReader fr2 = new FileReader(file1);
-		BufferedReader br = new BufferedReader(fr2);
+		fr2 = new FileReader(file1);
+		br = new BufferedReader(fr2);
 		
 		String thisLine;
 	
@@ -26,14 +28,23 @@ public class CountCharacter {
 				}				
 			}
 		}
+	
 		}
 	 catch (IOException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		 e.printStackTrace();
 	} 		
+	catch(NullPointerException e){
+		e.printStackTrace();
+	}
 		finally {
 		// Close resources here! 
-		// (all close() calls)
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 		
 		return count;
@@ -64,7 +75,8 @@ public class CountCharacter {
 			// (all close() calls)
 		}										
 		System.out.println(countChars("file.txt", 's'));
-
+		System.out.println(countChars(null, 's'));
+		
 	}
 
 }
