@@ -35,7 +35,7 @@ public class ToyStore {
 		return orders;
 	}
 
-	public void setOrders(ArrayList<Order> orders) {
+	public void setOrders(List<Order> orders) {
 		this.orders = orders;
 	}
 
@@ -62,9 +62,15 @@ public class ToyStore {
 				inventory.removeProduct(orderline.getProductId(), orderline.getQuantity());
 				log.info("Product Purchased. " +  orderline);
 				}
-				catch (ProductRecallException e){log.error("Product is in Recall Status. " + e.getMessage()); }
-				catch (InventoryLowException e){log.error("Product is in Low Inventory. " + e.getMessage());}
-				catch (OutOfStockException e) {log.error(e.getMessage());}
+				catch (ProductRecallException e){
+					log.error("Product is in Recall Status. " + e.getMessage());
+					}
+				catch (InventoryLowException e){
+					log.error("Product is in Low Inventory. " + e.getMessage());
+					}
+				catch (OutOfStockException e) {
+					log.error(e.getMessage());
+					}
 			}			
 		}
 	}

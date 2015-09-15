@@ -10,7 +10,6 @@ public class Shield implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String name;
 	private int addHPs;
-
 	private int loseHPs;
 	private double addHPPercent;
 	private double loseHPPercent;
@@ -71,10 +70,6 @@ public class Shield implements Serializable {
 		this.loseHPPercent = loseHPPercent;
 	}	
 	
-	public void useShield(){
-		
-		
-		
-	}
+
 	
 }

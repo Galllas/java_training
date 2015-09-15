@@ -84,9 +84,11 @@ public class SerializationTest {
 		catch (IOException e)
 		{
 			e.printStackTrace();
+			fail();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			fail();
 		} 
 		
 		

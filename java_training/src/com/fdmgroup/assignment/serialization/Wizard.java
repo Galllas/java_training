@@ -7,6 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.fdmgroup.serialization.game.Backpack;
 import com.fdmgroup.serialization.game.Board;
@@ -21,8 +22,8 @@ public class Wizard extends Player implements Serializable {
 	private static final long serialVersionUID = 1L;
 		
 	private transient Backpack backpack = new Backpack();
-	private ArrayList<Shield> shields = new ArrayList<Shield>();
-	private ArrayList<Power> powers = new ArrayList<Power>();
+	private List<Shield> shields = new ArrayList<Shield>();
+	private List<Power> powers = new ArrayList<Power>();
 	
 	public Backpack getBackpack() {
 		return backpack;
@@ -32,19 +33,19 @@ public class Wizard extends Player implements Serializable {
 		this.backpack = backpack;
 	}
 
-	public ArrayList<Shield> getShields() {
+	public List<Shield> getShields() {
 		return shields;
 	}
 
-	public void setShields(ArrayList<Shield> shields) {
+	public void setShields(List<Shield> shields) {
 		this.shields = shields;
 	}
 
-	public ArrayList<Power> getPowers() {
+	public List<Power> getPowers() {
 		return powers;
 	}
 
-	public void setPowers(ArrayList<Power> powers) {
+	public void setPowers(List<Power> powers) {
 		this.powers = powers;
 	}
 
@@ -64,6 +65,7 @@ public class Wizard extends Player implements Serializable {
 			os.defaultWriteObject();		//request JVM to do normal serialization process
 			os.writeUTF(this.getName()); 
 			os.writeInt(this.getHealthPoints());	
+			
 			int count = backpack.getNumPacks();
 			os.writeInt(count);
 
@@ -86,8 +88,10 @@ public class Wizard extends Player implements Serializable {
 			is.defaultReadObject();
 			setName(is.readUTF());		//do the normal deserialization process
 			setHealthPoints(is.readInt());
+			
 			int count = is.readInt();
 			backpack = new Backpack();
+			
 			for (int i = 0; i < count; i ++){
 			getBackpack().addHealthPack(new HealthPack(is.readInt()));
 			}
