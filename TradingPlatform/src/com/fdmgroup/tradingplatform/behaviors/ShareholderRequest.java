@@ -1,23 +1,25 @@
 package com.fdmgroup.tradingplatform.behaviors;
 
+import java.math.BigDecimal;
+
 import com.fdmgroup.tradingplatform.bin.Request;
 
-public class NormalMakeRequest implements MakeRequest {
+public class ShareholderRequest implements MakeRequest {
 
 	private int DEFALUT_REQUEST_ID = -1;
 	private int DEFALUT_PARENT_REQUEST_ID = -1;
 	private int DEFALUT_SHARES_FILLED = -1;
 
 	@Override
-	public Request makeRequest(int request_id, int parent_request_id, int shares_filled,
-			int shareholder_id, String request_date,
-			String buy_sell, String status, int stock_ex_id, int stock_id,
-			int shares, int minimum_shares, String time_in_force,
-			int limit_price, int stop_price) {
+	public Request makeRequest(int requestId, int parentRequestId, int sharesFilled,
+			int shareholderId, String requestDate,
+			String buySell, String status, int stockExId, int stockId,
+			int shares, int minimumShares, String timeInForce,
+			BigDecimal limitPrice, BigDecimal stopPrice) {
 		
 		Request request = new Request( DEFALUT_REQUEST_ID, DEFALUT_PARENT_REQUEST_ID, DEFALUT_SHARES_FILLED,
-				shareholder_id, request_date, buy_sell, status,
-				stock_ex_id, stock_id, shares, minimum_shares, time_in_force, limit_price, stop_price);
+				shareholderId, requestDate, buySell, status,
+				stockExId, stockId, shares, minimumShares, timeInForce, limitPrice, stopPrice);
 		
 		return request;
 	}
@@ -45,5 +47,8 @@ public class NormalMakeRequest implements MakeRequest {
 	public void setDEFALUT_SHARES_FILLED(int dEFALUT_SHARES_FILLED) {
 		DEFALUT_SHARES_FILLED = dEFALUT_SHARES_FILLED;
 	}
+	
+	
+
 }
 	

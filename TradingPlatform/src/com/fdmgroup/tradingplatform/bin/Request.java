@@ -1,90 +1,90 @@
 package com.fdmgroup.tradingplatform.bin;
 
+import java.math.BigDecimal;
+
 public class Request {
 
-	private int request_id;
-	private int parent_request_id;
-	private int shares_filled;
-	private int shareholder_id;
-	private String request_date;
-	private String buy_sell;
+	private int requestId;
+	private int parentRequestId;
+	private int sharesFilled;
+	private int shareholderId;
+	private String requestDate;
+	private String buySell;
 	private String status;
-	private int stock_ex_id;
-	private int stock_id; 
+	private int stockExId;
+	private int stockId; 
 	private int shares;
-	private int minimum_shares;
-	private String time_in_force;
-	private int limit_price;
-	private int stop_price;
+	private int minimumShares;
+	private String timeInForce;
+	private BigDecimal limitPrice;
+	private BigDecimal stopPrice;
 	
-	public Request(int request_id, int parent_request_id, int shares_filled,
-			int shareholder_id, String request_date, String buy_sell,
-			String status, int stock_ex_id, int stock_id, int shares,
-			int minimum_shares, String time_in_force, int limit_price,
-			int stop_price) {
+	public Request(int requestId, int parentRequestId, int sharesFilled, int shareholderId, String requestDate,
+			String buySell, String status, int stockExId, int stockId, int shares, int minimumShares,
+			String timeInForce, BigDecimal limitPrice, BigDecimal stopPrice) {
 		super();
-		this.request_id = request_id;
-		this.parent_request_id = parent_request_id;
-		this.shares_filled = shares_filled;
-		this.shareholder_id = shareholder_id;
-		this.request_date = request_date;
-		this.buy_sell = buy_sell;
+		this.requestId = requestId;
+		this.parentRequestId = parentRequestId;
+		this.sharesFilled = sharesFilled;
+		this.shareholderId = shareholderId;
+		this.requestDate = requestDate;
+		this.buySell = buySell;
 		this.status = status;
-		this.stock_ex_id = stock_ex_id;
-		this.stock_id = stock_id;
+		this.stockExId = stockExId;
+		this.stockId = stockId;
 		this.shares = shares;
-		this.minimum_shares = minimum_shares;
-		this.time_in_force = time_in_force;
-		this.limit_price = limit_price;
-		this.stop_price = stop_price;
-	}
-	
-	public int getRequest_id() {
-		return request_id;
+		this.minimumShares = minimumShares;
+		this.timeInForce = timeInForce;
+		this.limitPrice = limitPrice;
+		this.stopPrice = stopPrice;
 	}
 
-	public void setRequest_id(int request_id) {
-		this.request_id = request_id;
+	public int getRequestId() {
+		return requestId;
 	}
 
-	public int getParent_request_id() {
-		return parent_request_id;
+	public void setRequestId(int requestId) {
+		this.requestId = requestId;
 	}
 
-	public void setParent_request_id(int parent_request_id) {
-		this.parent_request_id = parent_request_id;
+	public int getParentRequestId() {
+		return parentRequestId;
 	}
 
-	public int getShares_filled() {
-		return shares_filled;
+	public void setParentRequestId(int parentRequestId) {
+		this.parentRequestId = parentRequestId;
 	}
 
-	public void setShares_filled(int shares_filled) {
-		this.shares_filled = shares_filled;
+	public int getSharesFilled() {
+		return sharesFilled;
 	}
 
-	public int getShareholder_id() {
-		return shareholder_id;
+	public void setSharesFilled(int sharesFilled) {
+		this.sharesFilled = sharesFilled;
 	}
 
-	public void setShareholder_id(int shareholder_id) {
-		this.shareholder_id = shareholder_id;
+	public int getShareholderId() {
+		return shareholderId;
 	}
 
-	public String getRequest_date() {
-		return request_date;
+	public void setShareholderId(int shareholderId) {
+		this.shareholderId = shareholderId;
 	}
 
-	public void setRequest_date(String request_date) {
-		this.request_date = request_date;
+	public String getRequestDate() {
+		return requestDate;
 	}
 
-	public String getBuy_sell() {
-		return buy_sell;
+	public void setRequestDate(String requestDate) {
+		this.requestDate = requestDate;
 	}
 
-	public void setBuy_sell(String buy_sell) {
-		this.buy_sell = buy_sell;
+	public String getBuySell() {
+		return buySell;
+	}
+
+	public void setBuySell(String buySell) {
+		this.buySell = buySell;
 	}
 
 	public String getStatus() {
@@ -95,20 +95,20 @@ public class Request {
 		this.status = status;
 	}
 
-	public int getStock_ex_id() {
-		return stock_ex_id;
+	public int getStockExId() {
+		return stockExId;
 	}
 
-	public void setStock_ex_id(int stock_ex_id) {
-		this.stock_ex_id = stock_ex_id;
+	public void setStockExId(int stockExId) {
+		this.stockExId = stockExId;
 	}
 
-	public int getStock_id() {
-		return stock_id;
+	public int getStockId() {
+		return stockId;
 	}
 
-	public void setStock_id(int stock_id) {
-		this.stock_id = stock_id;
+	public void setStockId(int stockId) {
+		this.stockId = stockId;
 	}
 
 	public int getShares() {
@@ -119,49 +119,47 @@ public class Request {
 		this.shares = shares;
 	}
 
-	public int getMinimum_shares() {
-		return minimum_shares;
+	public int getMinimumShares() {
+		return minimumShares;
 	}
 
-	public void setMinimum_shares(int minimum_shares) {
-		this.minimum_shares = minimum_shares;
+	public void setMinimumShares(int minimumShares) {
+		this.minimumShares = minimumShares;
 	}
 
-	public String getTime_in_force() {
-		return time_in_force;
+	public String getTimeInForce() {
+		return timeInForce;
 	}
 
-	public void setTime_in_force(String time_in_force) {
-		this.time_in_force = time_in_force;
+	public void setTimeInForce(String timeInForce) {
+		this.timeInForce = timeInForce;
 	}
 
-	public int getLimit_price() {
-		return limit_price;
+	public BigDecimal getLimitPrice() {
+		return limitPrice;
 	}
 
-	public void setLimit_price(int limit_price) {
-		this.limit_price = limit_price;
+	public void setLimitPrice(BigDecimal limitPrice) {
+		this.limitPrice = limitPrice;
 	}
 
-	public int getStop_price() {
-		return stop_price;
+	public BigDecimal getStopPrice() {
+		return stopPrice;
 	}
 
-	public void setStop_price(int stop_price) {
-		this.stop_price = stop_price;
+	public void setStopPrice(BigDecimal stopPrice) {
+		this.stopPrice = stopPrice;
 	}
 
 	@Override
 	public String toString() {
-		return "Request [request_id=" + request_id + ", parent_request_id="
-				+ parent_request_id + ", shares_filled=" + shares_filled
-				+ ", shareholder_id=" + shareholder_id + ", request_date="
-				+ request_date + ", buy_sell=" + buy_sell + ", status="
-				+ status + ", stock_ex_id=" + stock_ex_id + ", stock_id="
-				+ stock_id + ", shares=" + shares + ", minimum_shares="
-				+ minimum_shares + ", time_in_force=" + time_in_force
-				+ ", limit_price=" + limit_price + ", stop_price=" + stop_price
-				+ "]";
+		return "Request [requestId=" + requestId + ", parentRequestId=" + parentRequestId + ", sharesFilled="
+				+ sharesFilled + ", shareholderId=" + shareholderId + ", requestDate=" + requestDate + ", buySell="
+				+ buySell + ", status=" + status + ", stockExId=" + stockExId + ", stockId=" + stockId + ", shares="
+				+ shares + ", minimumShares=" + minimumShares + ", timeInForce=" + timeInForce + ", limitPrice="
+				+ limitPrice + ", stopPrice=" + stopPrice + "]";
 	}
+
+	
 
 }

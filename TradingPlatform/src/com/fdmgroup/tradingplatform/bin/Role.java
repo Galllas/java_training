@@ -2,28 +2,29 @@ package com.fdmgroup.tradingplatform.bin;
 
 public class Role {
 
-	private int id;
-	private String name;
-
-	public int getId() {
-		return id;
+	private int roleId;
+	private String roleName;
+	
+	public int getRoleId() {
+		return roleId;
 	}
-
-	public void setId(int id) {
-		this.id = id;
+	
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
 	}
-
-	public String getName() {
-		return name;
+	
+	public String getRoleName() {
+		return roleName;
 	}
-
-	public void setName(String name) {
-		this.name = name;
+	
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Role [id=" + id + ", name=" + name + "]";
+		return "Role [roleId=" + roleId + ", roleName=" + roleName + "]";
 	}
+	
 
 }
