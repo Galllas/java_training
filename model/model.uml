@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_EorAYF_EEeWZobw-zjPSnQ" name="NewModel">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_RhzZgF_FEeWZobw-zjPSnQ" name="Shareholder"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_UU5MMF_FEeWZobw-zjPSnQ" name="Administrator"/>
+  <packagedElement xmi:type="uml:Artifact" xmi:id="_Nb5h0F_KEeWZobw-zjPSnQ" name="Artifact1"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Zq4AIF_KEeWZobw-zjPSnQ" name="Make Request"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_zYkCIF_REeWZ5MXJwsoqrA" name="View Portfolio"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_-cdNYF_REeWZ5MXJwsoqrA" name="User Management"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Ifc8UF_SEeWZ5MXJwsoqrA" name="Buy">
+    <extend xmi:id="_9Nts4F_SEeWZ5MXJwsoqrA" extendedCase="_Zq4AIF_KEeWZobw-zjPSnQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_KLFXsF_SEeWZ5MXJwsoqrA" name="Sell">
+    <extend xmi:id="_-EzF4F_SEeWZ5MXJwsoqrA" extendedCase="_Zq4AIF_KEeWZobw-zjPSnQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="__zL6UF_SEeWZ5MXJwsoqrA" name="Person Information">
+    <extend xmi:id="_hc2_oF_TEeWZ5MXJwsoqrA" extendedCase="_zYkCIF_REeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_BquDsF_TEeWZ5MXJwsoqrA" name="Request Information">
+    <extend xmi:id="_ihynYF_TEeWZ5MXJwsoqrA" extendedCase="_zYkCIF_REeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_F1ZUYF_TEeWZ5MXJwsoqrA" name="Trade information">
+    <extend xmi:id="_i9ivQF_TEeWZ5MXJwsoqrA" extendedCase="_zYkCIF_REeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Q1lEUF_TEeWZ5MXJwsoqrA" name="Security Information">
+    <extend xmi:id="_jZgSgF_TEeWZ5MXJwsoqrA" extendedCase="_zYkCIF_REeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ZQSm0F_TEeWZ5MXJwsoqrA" memberEnd="_ZQbwwF_TEeWZ5MXJwsoqrA _ZQcX0F_TEeWZ5MXJwsoqrA">
+    <ownedEnd xmi:id="_ZQbwwF_TEeWZ5MXJwsoqrA" type="_RhzZgF_FEeWZobw-zjPSnQ" association="_ZQSm0F_TEeWZ5MXJwsoqrA"/>
+    <ownedEnd xmi:id="_ZQcX0F_TEeWZ5MXJwsoqrA" type="_Zq4AIF_KEeWZobw-zjPSnQ" association="_ZQSm0F_TEeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_aSoNkF_TEeWZ5MXJwsoqrA" memberEnd="_aSoNkV_TEeWZ5MXJwsoqrA _aSoNkl_TEeWZ5MXJwsoqrA">
+    <ownedEnd xmi:id="_aSoNkV_TEeWZ5MXJwsoqrA" type="_zYkCIF_REeWZ5MXJwsoqrA" association="_aSoNkF_TEeWZ5MXJwsoqrA"/>
+    <ownedEnd xmi:id="_aSoNkl_TEeWZ5MXJwsoqrA" type="_RhzZgF_FEeWZobw-zjPSnQ" association="_aSoNkF_TEeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_blQ6IF_TEeWZ5MXJwsoqrA" memberEnd="_blQ6IV_TEeWZ5MXJwsoqrA _blQ6Il_TEeWZ5MXJwsoqrA">
+    <ownedEnd xmi:id="_blQ6IV_TEeWZ5MXJwsoqrA" type="_UU5MMF_FEeWZobw-zjPSnQ" association="_blQ6IF_TEeWZ5MXJwsoqrA"/>
+    <ownedEnd xmi:id="_blQ6Il_TEeWZ5MXJwsoqrA" type="_-cdNYF_REeWZ5MXJwsoqrA" association="_blQ6IF_TEeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_d59goF_TEeWZ5MXJwsoqrA" memberEnd="_d59goV_TEeWZ5MXJwsoqrA _d5-HsF_TEeWZ5MXJwsoqrA">
+    <ownedEnd xmi:id="_d59goV_TEeWZ5MXJwsoqrA" type="_UU5MMF_FEeWZobw-zjPSnQ" association="_d59goF_TEeWZ5MXJwsoqrA"/>
+    <ownedEnd xmi:id="_d5-HsF_TEeWZ5MXJwsoqrA" type="_zYkCIF_REeWZ5MXJwsoqrA" association="_d59goF_TEeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_sBmwwF_TEeWZ5MXJwsoqrA" name="View Logging"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_yCJ98F_TEeWZ5MXJwsoqrA" name="Add User">
+    <extend xmi:id="_onTXoF_UEeWZ5MXJwsoqrA" extendedCase="_-cdNYF_REeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_0D1h0F_TEeWZ5MXJwsoqrA" name="Delete User">
+    <extend xmi:id="_pLhfAF_UEeWZ5MXJwsoqrA" extendedCase="_-cdNYF_REeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_2W8z8F_TEeWZ5MXJwsoqrA" name="Update User Information">
+    <extend xmi:id="_pqMYAF_UEeWZ5MXJwsoqrA" extendedCase="_-cdNYF_REeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_5IRFAF_TEeWZ5MXJwsoqrA" name="View User Logs">
+    <extend xmi:id="_syOf8F_UEeWZ5MXJwsoqrA" extendedCase="_sBmwwF_TEeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_i2AucF_UEeWZ5MXJwsoqrA" name="View System logs">
+    <extend xmi:id="_sIUAQF_UEeWZ5MXJwsoqrA" extendedCase="_sBmwwF_TEeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_tg-cUF_UEeWZ5MXJwsoqrA" memberEnd="_tg-cUV_UEeWZ5MXJwsoqrA _tg_DYF_UEeWZ5MXJwsoqrA">
+    <ownedEnd xmi:id="_tg-cUV_UEeWZ5MXJwsoqrA" type="_UU5MMF_FEeWZobw-zjPSnQ" association="_tg-cUF_UEeWZ5MXJwsoqrA"/>
+    <ownedEnd xmi:id="_tg_DYF_UEeWZ5MXJwsoqrA" type="_sBmwwF_TEeWZ5MXJwsoqrA" association="_tg-cUF_UEeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_1Zhs8F_UEeWZ5MXJwsoqrA" memberEnd="_1Zhs8V_UEeWZ5MXJwsoqrA _1Zhs8l_UEeWZ5MXJwsoqrA">
+    <ownedEnd xmi:id="_1Zhs8V_UEeWZ5MXJwsoqrA" type="_2W8z8F_TEeWZ5MXJwsoqrA" association="_1Zhs8F_UEeWZ5MXJwsoqrA"/>
+    <ownedEnd xmi:id="_1Zhs8l_UEeWZ5MXJwsoqrA" type="_RhzZgF_FEeWZobw-zjPSnQ" association="_1Zhs8F_UEeWZ5MXJwsoqrA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_2hO74F_UEeWZ5MXJwsoqrA" memberEnd="_2hO74V_UEeWZ5MXJwsoqrA _2hO74l_UEeWZ5MXJwsoqrA">
+    <ownedEnd xmi:id="_2hO74V_UEeWZ5MXJwsoqrA" type="_5IRFAF_TEeWZ5MXJwsoqrA" association="_2hO74F_UEeWZ5MXJwsoqrA"/>
+    <ownedEnd xmi:id="_2hO74l_UEeWZ5MXJwsoqrA" type="_RhzZgF_FEeWZobw-zjPSnQ" association="_2hO74F_UEeWZ5MXJwsoqrA"/>
+  </packagedElement>
+</uml:Model>
