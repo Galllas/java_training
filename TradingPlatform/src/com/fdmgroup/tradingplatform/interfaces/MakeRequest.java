@@ -1,4 +1,4 @@
-package com.fdmgroup.tradingplatform.behaviors;
+package com.fdmgroup.tradingplatform.interfaces;
 
 import java.math.BigDecimal;
 

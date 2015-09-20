@@ -1,8 +1,9 @@
-package com.fdmgroup.tradingplatform.behaviors;
+package com.fdmgroup.tradingplatform.interfaces;
 
 import java.math.BigDecimal;
 
 import com.fdmgroup.tradingplatform.bin.Request;
+import com.fdmgroup.tradingplatform.dao.RequestRAMDAO;
 
 public class ShareholderRequest implements MakeRequest {
 
@@ -21,6 +22,8 @@ public class ShareholderRequest implements MakeRequest {
 				shareholderId, requestDate, buySell, status,
 				stockExId, stockId, shares, minimumShares, timeInForce, limitPrice, stopPrice);
 		
+		RequestRAMDAO requestRAMDAO = new RequestRAMDAO();
+		requestRAMDAO.create(request);
 		return request;
 	}
 

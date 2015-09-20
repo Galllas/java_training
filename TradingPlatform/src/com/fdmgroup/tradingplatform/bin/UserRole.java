@@ -5,6 +5,11 @@ public class UserRole {
 	private int personId;
 	private int roleId;
 	
+	public UserRole(int personId, int roleId) {
+		super();
+		this.personId = personId;
+		this.roleId = roleId;
+	}
 	public int getPersonId() {
 		return personId;
 	}

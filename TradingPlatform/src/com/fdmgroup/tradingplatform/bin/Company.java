@@ -9,6 +9,14 @@ public class Company {
 	private int stockId;
 	private BigDecimal startingPrice;
 	
+	public Company(int companyId, String name, int stockId, BigDecimal startingPrice) {
+		super();
+		this.companyId = companyId;
+		this.name = name;
+		this.stockId = stockId;
+		this.startingPrice = startingPrice;
+	}
+
 	public int getCompanyId() {
 		return companyId;
 	}

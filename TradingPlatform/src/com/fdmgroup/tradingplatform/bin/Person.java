@@ -1,6 +1,7 @@
 package com.fdmgroup.tradingplatform.bin;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Person {
 	
@@ -9,13 +10,24 @@ public class Person {
 	private String userName;
 	private String firstName;
 	private String lastName;
-	private ArrayList<Role> roles;
+	private List<Role> roles = new ArrayList<Role>();
 	
-	public int getPerson_id() {
+	public Person(int personId, String password, String userName, String firstName, String lastName,
+			ArrayList<Role> roles) {
+		super();
+		this.personId = personId;
+		this.password = password;
+		this.userName = userName;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.roles = roles;
+	}
+
+	public int getPersonId() {
 		return personId;
 	}
 	
-	public void setPerson_id(int person_id) {
+	public void setPersonId(int person_id) {
 		this.personId = person_id;
 	}
 	
@@ -51,20 +63,12 @@ public class Person {
 		this.lastName = lastName;
 	}
 	
-	public ArrayList<Role> getRoles() {
+	public List<Role> getRoles() {
 		return roles;
 	}
 	
 	public void setRoles(ArrayList<Role> roles) {
 		this.roles = roles;
-	}
-	
-	public void addRole(Role role){
-		this.roles.add(role);
-	}
-	
-	public void reomveRole(Role role){
-		this.roles.remove(role);
 	}
 
 	@Override

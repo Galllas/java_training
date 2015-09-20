@@ -6,6 +6,13 @@ public class SecurityRole {
 	private String userName;
 	private int roleId;
 	
+	public SecurityRole(int personId, String userName, int roleId) {
+		super();
+		this.personId = personId;
+		this.userName = userName;
+		this.roleId = roleId;
+	}
+
 	public int getPersonId() {
 		return personId;
 	}

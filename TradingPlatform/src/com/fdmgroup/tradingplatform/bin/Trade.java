@@ -15,6 +15,21 @@ public class Trade {
 	private int buyRequestId;
 	private int sellRequestId;
 	
+	public Trade(int tradeId, int stockId, String transactionTime, int shares, BigDecimal sharePrice,
+			BigDecimal priceTotal, int buyerId, int sellerId, int buyRequestId, int sellRequestId) {
+		super();
+		this.tradeId = tradeId;
+		this.stockId = stockId;
+		this.transactionTime = transactionTime;
+		this.shares = shares;
+		this.sharePrice = sharePrice;
+		this.priceTotal = priceTotal;
+		this.buyerId = buyerId;
+		this.sellerId = sellerId;
+		this.buyRequestId = buyRequestId;
+		this.sellRequestId = sellRequestId;
+	}
+
 	public int getTradeId() {
 		return tradeId;
 	}
