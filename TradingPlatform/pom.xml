@@ -5,6 +5,14 @@
   <version>0.0.1-SNAPSHOT</version>
   <build>
     <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -26,6 +34,11 @@
   		<groupId>org.mockito</groupId>
   		<artifactId>mockito-all</artifactId>
   		<version>1.10.19</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.oracle</groupId>
+  		<artifactId>ojdbc14</artifactId>
+  		<version>10.2.0.4.0</version>
   	</dependency>
   </dependencies>
 </project>

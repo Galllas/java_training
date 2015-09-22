@@ -1,6 +1,9 @@
 package com.fdmgroup.tradingplatform.dao;
 
+import java.sql.SQLException;
+
 import com.fdmgroup.tradingplatform.bin.Person;
+import com.fdmgroup.tradingplatform.jdbc.PersonJDBC;
 
 public class LogRAMDAO {
 
@@ -10,7 +13,14 @@ public class LogRAMDAO {
 	}
 
 	public Person read(String userName) {
-		// TODO Auto-generated method stub
+		
+		PersonJDBC personJDBC = new PersonJDBC();
+		try {
+			return personJDBC.readRecords(userName);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 
