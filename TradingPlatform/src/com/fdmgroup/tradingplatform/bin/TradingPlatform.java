@@ -2,6 +2,7 @@ package com.fdmgroup.tradingplatform.bin;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -75,27 +76,24 @@ public class TradingPlatform {
 		log.info("User Logged. " + person);
 	}	
 	
-	public void makeRequest(){
-	for(int i = 0; i< persons.size(); i++){
-		List<Role> roles =  persons.get(i).getRoles();
+	public void makeRequest(Person person, int requestId, int parentRequestId, int sharesFilled,
+			String buySell, String status, int stockExId, int stockId, int shares, int minimumShares,
+			String timeInForce, BigDecimal limitPrice, BigDecimal stopPrice){
+		List<Role> roles =  person.getRoles();
 		for (int j =0; j< roles.size() ; j++){
 			String time = df.format(new Date());
-			request = roles.get(j).getMakeRequest().makeRequest(0, 0, 0, persons.get(i).getPersonId(), time, "BUY", null, 0, 0, 0, 0, null, null, null);
-			log.info("Request Made. " + persons.get(i) + " " + request);
-			request = roles.get(j).getMakeRequest().makeRequest(0, 0, 0, persons.get(i).getPersonId(), time, "SELL", null, 0, 0, 0, 0, null, null, null);
-			log.info("Request Made. " + persons.get(i) + " " + request);
+			request = roles.get(j).getMakeRequest().makeRequest(requestId, parentRequestId, sharesFilled, person.getPersonId(), time,
+					buySell, status, stockExId, stockId, shares, minimumShares, timeInForce, limitPrice, stopPrice);
+			log.info("Request Made. " + person + " " + request);
 		}	
-		}
 	}
 	
-	public void viewPortfolio(){
-	for(int i = 0; i< persons.size(); i++){
-		List<Role> roles =  persons.get(i).getRoles();
+	public void viewPortfolio(Person person){
+		List<Role> roles =  person.getRoles();
 		for (int j =0; j< roles.size() ; j++){
-			portfolio = roles.get(j).getViewPortfolio().viewPortfolio(persons.get(i).getPersonId());
-			log.info("Portfolio Viewed. " + persons.get(i) + " " + portfolio);
+			portfolio = roles.get(j).getViewPortfolio().viewPortfolio(person.getPersonId());
+			log.info("Portfolio Viewed. " + person + " " + portfolio);
 		}	
-		}
 	}
 	
 	

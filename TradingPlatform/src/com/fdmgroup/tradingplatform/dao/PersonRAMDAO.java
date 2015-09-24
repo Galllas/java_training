@@ -13,18 +13,20 @@ public class PersonRAMDAO implements IStoreable<Person> {
 	
 	@Override
 	public void create(Person t) {
-		// TODO Auto-generated method stub
-		
+		PersonJDBC personJDBC = new PersonJDBC();
+		try {
+			personJDBC.createRecord(t);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public Person read(int id) {
-		// TODO Auto-generated method stub
 		PersonJDBC personJDBC = new PersonJDBC();
 		try {
 			return personJDBC.readRecords(id);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -32,14 +34,22 @@ public class PersonRAMDAO implements IStoreable<Person> {
 
 	@Override
 	public void update(Person t) {
-		// TODO Auto-generated method stub
-		
+		PersonJDBC personJDBC = new PersonJDBC();
+		try {
+			personJDBC.updateRecord(t);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void delete(Person t) {
-		// TODO Auto-generated method stub
-		
+		PersonJDBC personJDBC = new PersonJDBC();
+		try {
+			personJDBC.deleteRecord(t);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

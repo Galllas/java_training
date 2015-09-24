@@ -138,19 +138,26 @@ public class TradingPlatformTest {
 	public void testMakeRequest() {
 		tp.loginPerson("123456", "jadams");
 		tp.loginPerson("123456", "rgates");
-		tp.makeRequest();
-		verify(raviAdmin, times(2)).getRoles();
-		verify(janeShareholder, times(2)).getRoles();		
+		tp.makeRequest(janeShareholder, 0, 0, 0, "SELL", null, 0, 0, 0, 0, null, null, null);
+		tp.makeRequest(janeShareholder, 0, 0, 0, "BUY", null, 0, 0, 0, 0, null, null, null);
+		tp.makeRequest(raviAdmin, 0, 0, 0, "SELL", null, 0, 0, 0, 0, null, null, null);
+		tp.makeRequest(raviAdmin, 0, 0, 0, "BUY", null, 0, 0, 0, 0, null, null, null);		
+		verify(raviAdmin, times(3)).getRoles();
+		verify(janeShareholder, times(3)).getRoles();		
 	}
 	
 	@Test
 	public void testViewPortfolio() {
 		tp.loginPerson("123456", "jadams");
 		tp.loginPerson("123456", "rgates");
-		tp.viewPortfolio();		
+		tp.viewPortfolio(janeShareholder);	
+		tp.viewPortfolio(raviAdmin);
 		verify(raviAdmin, times(2)).getRoles();
 		verify(janeShareholder, times(2)).getRoles();		
 	}	
+	
+	
+	
 	
 	
 }

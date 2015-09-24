@@ -77,6 +77,84 @@ public class PersonJDBC {
 		return null;
 	}
 	
+	public void createRecord(Person person) throws SQLException {
+
+		String query;
+		
+		try {
+			connection = DBConnector.getConnection();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			return;
+			
+		}
+		properties = SQLProperties
+				.getProperties("dml.properties");
+		query = properties.getProperty("CreatePerson");
+
+		stmt = connection.prepareStatement(query);
+		stmt.setInt(1, person.getPersonId());
+		stmt.setString(2, person.getUserName());
+		stmt.setString(3, person.getFirstname());
+		stmt.setString(4, person.getLastName());
+		stmt.setString(5, person.getPassword());
+
+		ResultSet rs = stmt.executeQuery();
+
+	}
+	
+	public void deleteRecord(Person person) throws SQLException {
+
+		String query;
+		
+		try {
+			connection = DBConnector.getConnection();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			return;
+			
+		}
+		properties = SQLProperties
+				.getProperties("dml.properties");
+		query = properties.getProperty("DeletePerson");
+
+		stmt = connection.prepareStatement(query);
+		stmt.setInt(1, person.getPersonId());
+
+		ResultSet rs = stmt.executeQuery();
+
+	}
+	
+	public void updateRecord(Person person) throws SQLException {
+
+		String query;
+		
+		try {
+			connection = DBConnector.getConnection();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			return;
+			
+		}
+		properties = SQLProperties
+				.getProperties("dml.properties");
+		query = properties.getProperty("DeletePerson");
+		
+		stmt = connection.prepareStatement(query);
+		stmt.setInt(1, person.getPersonId());
+		ResultSet rs = stmt.executeQuery();
+		
+		query = properties.getProperty("CreatePerson");		
+		stmt = connection.prepareStatement(query);
+		stmt.setInt(1, person.getPersonId());
+		stmt.setString(2, person.getUserName());
+		stmt.setString(3, person.getFirstname());
+		stmt.setString(4, person.getLastName());
+		stmt.setString(5, person.getPassword());
+
+		rs = stmt.executeQuery();
+
+	}
 	
 }
 

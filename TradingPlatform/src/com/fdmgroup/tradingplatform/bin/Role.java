@@ -13,7 +13,6 @@ public class Role {
 	AddUser addUser;
 	RoleFactory roleFactory;
 	
-	
 	public Role(RoleFactory roleFactory, String roleName){
 		this.roleName = roleName;
 		this.roleFactory = roleFactory;
