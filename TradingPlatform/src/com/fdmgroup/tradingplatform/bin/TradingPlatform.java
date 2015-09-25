@@ -69,11 +69,17 @@ public class TradingPlatform {
 	public void loginPerson(String password, String userName){ 
 		
 		person = logRAMDAO.read(userName);
+		if (person == null){
+			log.error("Wrong Username.");
+		}
+		else 
+		{
 		userRole = userRoleRAMDAO.read(person.getPersonId());
 		role = roleRAMDAO.read(userRole.getRoleId());
 		person.getRoles().add(role);
 		this.persons.add(person);
 		log.info("User Logged. " + person);
+		}
 	}	
 	
 	public void makeRequest(Person person, int requestId, int parentRequestId, int sharesFilled,

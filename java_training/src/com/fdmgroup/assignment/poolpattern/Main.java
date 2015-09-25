@@ -15,6 +15,7 @@ public class Main {
 		System.out.println(" ");
 		
 		animal = pool.getAnimal();
+		animal.setName("Cat");
 		System.out.println(animal);
 		
 	}
