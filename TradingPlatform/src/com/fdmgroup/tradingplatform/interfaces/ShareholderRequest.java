@@ -2,29 +2,29 @@ package com.fdmgroup.tradingplatform.interfaces;
 
 import java.math.BigDecimal;
 
+import com.fdmgroup.tradingplatform.bin.Company;
+import com.fdmgroup.tradingplatform.bin.Person;
 import com.fdmgroup.tradingplatform.bin.Request;
 import com.fdmgroup.tradingplatform.dao.RequestRAMDAO;
 
 public class ShareholderRequest implements MakeRequest {
 
 	private int DEFALUT_REQUEST_ID = -1;
-	private int DEFALUT_PARENT_REQUEST_ID = -1;
+	private Request DEFALUT_PARENT_REQUEST = null;
 	private int DEFALUT_SHARES_FILLED = -1;
-
+	private RequestRAMDAO requestRAMDAO = new RequestRAMDAO();
+	
 	@Override
-	public Request makeRequest(int requestId, int parentRequestId, int sharesFilled,
-			int shareholderId, String requestDate,
-			String buySell, String status, int stockExId, int stockId,
-			int shares, int minimumShares, String timeInForce,
-			BigDecimal limitPrice, BigDecimal stopPrice) {
+	public Request makeRequest(int requestId, Request request, int sharesFilled, Person person,
+			String requestDate, String buySell, String status, Company company, int shares,
+			int minimumShares, String timeInForce, BigDecimal limitPrice, BigDecimal stopPrice) {
 		
-		Request request = new Request( DEFALUT_REQUEST_ID, DEFALUT_PARENT_REQUEST_ID, DEFALUT_SHARES_FILLED,
-				shareholderId, requestDate, buySell, status,
-				stockExId, stockId, shares, minimumShares, timeInForce, limitPrice, stopPrice);
+		Request newRequest = new Request( DEFALUT_REQUEST_ID, DEFALUT_PARENT_REQUEST, DEFALUT_SHARES_FILLED,
+				person, requestDate, buySell, status,
+				 company, shares, minimumShares, timeInForce, limitPrice, stopPrice);
 		
-		RequestRAMDAO requestRAMDAO = new RequestRAMDAO();
-		requestRAMDAO.create(request);
-		return request;
+		requestRAMDAO.create(newRequest);
+		return newRequest;
 	}
 
 	public int getDEFALUT_REQUEST_ID() {
@@ -35,12 +35,12 @@ public class ShareholderRequest implements MakeRequest {
 		DEFALUT_REQUEST_ID = dEFALUT_REQUEST_ID;
 	}
 
-	public int getDEFALUT_PARENT_REQUEST_ID() {
-		return DEFALUT_PARENT_REQUEST_ID;
+	public Request getDEFALUT_PARENT_REQUEST() {
+		return DEFALUT_PARENT_REQUEST;
 	}
 
-	public void setDEFALUT_PARENT_REQUEST_ID(int dEFALUT_PARENT_REQUEST_ID) {
-		DEFALUT_PARENT_REQUEST_ID = dEFALUT_PARENT_REQUEST_ID;
+	public void setDEFALUT_PARENT_REQUEST(Request dEFALUT_PARENT_REQUEST) {
+		DEFALUT_PARENT_REQUEST = dEFALUT_PARENT_REQUEST;
 	}
 
 	public int getDEFALUT_SHARES_FILLED() {
@@ -50,8 +50,14 @@ public class ShareholderRequest implements MakeRequest {
 	public void setDEFALUT_SHARES_FILLED(int dEFALUT_SHARES_FILLED) {
 		DEFALUT_SHARES_FILLED = dEFALUT_SHARES_FILLED;
 	}
-	
-	
 
+	public RequestRAMDAO getRequestRAMDAO() {
+		return requestRAMDAO;
+	}
+
+	public void setRequestRAMDAO(RequestRAMDAO requestRAMDAO) {
+		this.requestRAMDAO = requestRAMDAO;
+	}
+	
 }
 	

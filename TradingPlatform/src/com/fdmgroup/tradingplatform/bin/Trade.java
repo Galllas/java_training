@@ -2,34 +2,77 @@ package com.fdmgroup.tradingplatform.bin;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TRADE")
 public class Trade {
 
+	@SequenceGenerator(name="TRADE_ID_SEQ", initialValue=1, allocationSize=50)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TRADE_ID_SEQ")
+	@Id
+	@Column(name = "TRADE_ID")
 	private int tradeId;
-	private int stockId;
-	private String transactionTime;
-	private int shares;
-	private BigDecimal sharePrice;
-	private BigDecimal priceTotal;
-	private int buyerId;
-	private int sellerId;
-	private int buyRequestId;
-	private int sellRequestId;
 	
-	public Trade(int tradeId, int stockId, String transactionTime, int shares, BigDecimal sharePrice,
-			BigDecimal priceTotal, int buyerId, int sellerId, int buyRequestId, int sellRequestId) {
+	@ManyToOne	
+	@JoinColumn(name = "STOCK_ID", referencedColumnName="STOCK_ID")	
+	private Company company;
+	
+	@Column(name = "TRANSACTION_TIME")
+	private String transactionTime;
+	
+	@Column(name = "SHARES")
+	private int shares;
+	
+	@Column(name = "SHARE_PRICE")
+	private BigDecimal sharePrice;
+	
+	@Column(name = "PRICE_TOTAL")
+	private BigDecimal priceTotal;
+	
+	@ManyToOne			
+	@JoinColumn(name = "SELLER_ID")
+	private Person person1;	
+	
+	@ManyToOne
+	@JoinColumn(name = "BUYER_ID")
+	private Person person2;
+	
+	@ManyToOne	
+	@JoinColumn(name = "BUY_REQUEST_ID")
+	private Request request1;
+	
+	@ManyToOne	
+	@JoinColumn(name = "SELL_REQUEST_ID")
+	private Request request2;
+	
+	public Trade(int tradeId, Company company, String transactionTime, int shares, BigDecimal sharePrice,
+			BigDecimal priceTotal, Person buyer, Person seller, Request buyRequest, Request sellRequest) {
 		super();
 		this.tradeId = tradeId;
-		this.stockId = stockId;
+		this.company = company;
 		this.transactionTime = transactionTime;
 		this.shares = shares;
 		this.sharePrice = sharePrice;
 		this.priceTotal = priceTotal;
-		this.buyerId = buyerId;
-		this.sellerId = sellerId;
-		this.buyRequestId = buyRequestId;
-		this.sellRequestId = sellRequestId;
+		this.person1 = buyer;
+		this.person2 = seller;
+		this.request1 = buyRequest;
+		this.request2 = sellRequest;
 	}
 
+	public Trade(){
+		
+	}
+	
 	public int getTradeId() {
 		return tradeId;
 	}
@@ -38,14 +81,14 @@ public class Trade {
 		this.tradeId = tradeId;
 	}
 	
-	public int getStockId() {
-		return stockId;
+	public Company getCompany() {
+		return company;
 	}
-	
-	public void setStockId(int stockId) {
-		this.stockId = stockId;
+
+	public void setCompany(Company company) {
+		this.company = company;
 	}
-	
+
 	public String getTransactionTime() {
 		return transactionTime;
 	}
@@ -77,46 +120,46 @@ public class Trade {
 	public void setPriceTotal(BigDecimal priceTotal) {
 		this.priceTotal = priceTotal;
 	}
-	
-	public int getBuyerId() {
-		return buyerId;
+
+	public Person getPerson1() {
+		return person1;
 	}
-	
-	public void setBuyerId(int buyerId) {
-		this.buyerId = buyerId;
+
+	public void setPerson1(Person person1) {
+		this.person1 = person1;
 	}
-	
-	public int getSellerId() {
-		return sellerId;
+
+	public Person getPerson2() {
+		return person2;
 	}
-	
-	public void setSellerId(int sellerId) {
-		this.sellerId = sellerId;
+
+	public void setPerson2(Person person2) {
+		this.person2 = person2;
 	}
-	
-	public int getBuyRequestId() {
-		return buyRequestId;
+
+	public Request getRequest1() {
+		return request1;
 	}
-	
-	public void setBuyRequestId(int buyRequestId) {
-		this.buyRequestId = buyRequestId;
+
+	public void setRequest1(Request request1) {
+		this.request1 = request1;
 	}
-	
-	public int getSellRequestId() {
-		return sellRequestId;
+
+	public Request getRequest2() {
+		return request2;
 	}
-	
-	public void setSellRequestId(int sellRequestId) {
-		this.sellRequestId = sellRequestId;
+
+	public void setRequest2(Request request2) {
+		this.request2 = request2;
 	}
 
 	@Override
 	public String toString() {
-		return "Trade [tradeId=" + tradeId + ", stockId=" + stockId + ", transactionTime=" + transactionTime
-				+ ", shares=" + shares + ", sharePrice=" + sharePrice + ", priceTotal=" + priceTotal + ", buyerId="
-				+ buyerId + ", sellerId=" + sellerId + ", buyRequestId=" + buyRequestId + ", sellRequestId="
-				+ sellRequestId + "]";
+		return "Trade [tradeId=" + tradeId + ", company=" + company
+				+ ", transactionTime=" + transactionTime + ", shares=" + shares
+				+ ", sharePrice=" + sharePrice + ", priceTotal=" + priceTotal
+				+ ", person1=" + person1 + ", person2=" + person2
+				+ ", request1=" + request1 + ", request2=" + request2 + "]";
 	}
-	
 	
 }

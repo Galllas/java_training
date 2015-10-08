@@ -4,18 +4,18 @@ import java.util.Set;
 
 public class Portfolio {
 
-	Person person;
-	CurrentShareholderShares currentShareholderShares;
-	SecurityRole securityRole;
-	Set<Request> requests;
-	Set<Trade> trades;
+	private Person person;
+	private Set<CurrentShareholderShares> currentShareholderShares;
+	private Set<SecurityRole> securityRoles;
+	private Set<Request> requests;
+	private Set<Trade> trades;
 	
-	public Portfolio(Person person, CurrentShareholderShares currentShareholderShares, SecurityRole securityRole,
+	public Portfolio(Person person, Set<CurrentShareholderShares> currentShareholderShares, Set<SecurityRole> securityRoles,
 			Set<Request> requests, Set<Trade> trades) {
 		super();
 		this.person = person;
 		this.currentShareholderShares = currentShareholderShares;
-		this.securityRole = securityRole;
+		this.securityRoles = securityRoles;
 		this.requests = requests;
 		this.trades = trades;
 	}
@@ -28,20 +28,20 @@ public class Portfolio {
 		this.person = person;
 	}
 
-	public CurrentShareholderShares getCurrentShareholderShares() {
+	public Set<CurrentShareholderShares> getCurrentShareholderShares() {
 		return currentShareholderShares;
 	}
 
-	public void setCurrentShareholderShares(CurrentShareholderShares currentShareholderShares) {
+	public void setCurrentShareholderShares(Set<CurrentShareholderShares> currentShareholderShares) {
 		this.currentShareholderShares = currentShareholderShares;
 	}
 
-	public SecurityRole getSecurityRole() {
-		return securityRole;
+	public Set<SecurityRole> getSecurityRole() {
+		return securityRoles;
 	}
 
-	public void setSecurityRole(SecurityRole securityRole) {
-		this.securityRole = securityRole;
+	public void setSecurityRole(Set<SecurityRole> securityRole) {
+		this.securityRoles = securityRole;
 	}
 
 	public Set<Request> getRequests() {
@@ -63,7 +63,7 @@ public class Portfolio {
 	@Override
 	public String toString() {
 		return "Portfolio [person=" + person + ", currentShareholderShares=" + currentShareholderShares
-				+ ", securityRole=" + securityRole + ", requests=" + requests + ", trades=" + trades + "]";
+				+ ", securityRoles=" + securityRoles + ", requests=" + requests + ", trades=" + trades + "]";
 	}
 	
 	

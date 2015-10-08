@@ -6,6 +6,13 @@ public class CurrentShareholderShares {
 	private int stockId;
 	private int shares;
 	
+	public CurrentShareholderShares(int shareholderId, int stockId, int shares) {
+		super();
+		this.shareholderId = shareholderId;
+		this.stockId = stockId;
+		this.shares = shares;
+	}
+
 	public int getShareholderId() {
 		return shareholderId;
 	}

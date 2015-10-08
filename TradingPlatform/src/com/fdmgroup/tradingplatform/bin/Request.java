@@ -2,36 +2,79 @@ package com.fdmgroup.tradingplatform.bin;
 
 import java.math.BigDecimal;
 
-public class Request {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-	private int requestId;
-	private int parentRequestId;
-	private int sharesFilled;
-	private int shareholderId;
-	private String requestDate;
-	private String buySell;
-	private String status;
-	private int stockExId;
-	private int stockId; 
-	private int shares;
-	private int minimumShares;
-	private String timeInForce;
-	private BigDecimal limitPrice;
-	private BigDecimal stopPrice;
+@Entity
+@Table(name="REQUEST")
+public class Request {
 	
-	public Request(int requestId, int parentRequestId, int sharesFilled, int shareholderId, String requestDate,
-			String buySell, String status, int stockExId, int stockId, int shares, int minimumShares,
-			String timeInForce, BigDecimal limitPrice, BigDecimal stopPrice) {
+	@SequenceGenerator(name="REQUEST_ID_SEQ", initialValue=1, allocationSize=50)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="REQUEST_ID_SEQ")
+	@Id
+	@Column(name = "REQUEST_ID")
+	private int requestId;
+	
+	@ManyToOne	
+	@JoinColumn(name = "PARENT_REQUEST_ID")
+	private Request request;
+	
+	@Column(name = "SHARES_FILLED")
+	private int sharesFilled;
+	
+	@ManyToOne		
+	@JoinColumn(name = "SHAREHOLDER_ID")
+	private Person person;
+	
+	@Column(name = "REQUEST_DATE")
+	private String requestDate;
+	
+	@Column(name = "BUY_SELL")
+	private String buySell;
+	
+	@Column(name = "STATUS")
+	private String status;
+	
+	@ManyToOne	
+	@JoinColumn(name = "STOCK_ID", referencedColumnName="STOCK_ID")	
+	private Company company;
+	
+	@Column(name = "SHARES")
+	private int shares;
+	
+	@Column(name = "MINIMUM_SHARES")
+	private int minimumShares;
+	
+	@Column(name = "TIME_IN_FORCE")
+	private String timeInForce;
+	
+	@Column(name = "LIMIT_PRICE")
+	private BigDecimal limitPrice;
+	
+	@Column(name = "STOP_PRICE")
+	private BigDecimal stopPrice;
+
+	public Request(int requestId, Request request, int sharesFilled,
+			Person person, String requestDate, String buySell, String status,
+			Company company, int shares, int minimumShares, String timeInForce,
+			BigDecimal limitPrice, BigDecimal stopPrice) {
 		super();
 		this.requestId = requestId;
-		this.parentRequestId = parentRequestId;
+		this.request = request;
 		this.sharesFilled = sharesFilled;
-		this.shareholderId = shareholderId;
+		this.person = person;
 		this.requestDate = requestDate;
 		this.buySell = buySell;
 		this.status = status;
-		this.stockExId = stockExId;
-		this.stockId = stockId;
+		this.company = company;
 		this.shares = shares;
 		this.minimumShares = minimumShares;
 		this.timeInForce = timeInForce;
@@ -39,6 +82,10 @@ public class Request {
 		this.stopPrice = stopPrice;
 	}
 
+	public Request(){
+		
+	}
+	
 	public int getRequestId() {
 		return requestId;
 	}
@@ -47,28 +94,12 @@ public class Request {
 		this.requestId = requestId;
 	}
 
-	public int getParentRequestId() {
-		return parentRequestId;
-	}
-
-	public void setParentRequestId(int parentRequestId) {
-		this.parentRequestId = parentRequestId;
-	}
-
 	public int getSharesFilled() {
 		return sharesFilled;
 	}
 
 	public void setSharesFilled(int sharesFilled) {
 		this.sharesFilled = sharesFilled;
-	}
-
-	public int getShareholderId() {
-		return shareholderId;
-	}
-
-	public void setShareholderId(int shareholderId) {
-		this.shareholderId = shareholderId;
 	}
 
 	public String getRequestDate() {
@@ -93,22 +124,6 @@ public class Request {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public int getStockExId() {
-		return stockExId;
-	}
-
-	public void setStockExId(int stockExId) {
-		this.stockExId = stockExId;
-	}
-
-	public int getStockId() {
-		return stockId;
-	}
-
-	public void setStockId(int stockId) {
-		this.stockId = stockId;
 	}
 
 	public int getShares() {
@@ -150,16 +165,40 @@ public class Request {
 	public void setStopPrice(BigDecimal stopPrice) {
 		this.stopPrice = stopPrice;
 	}
+	
+	public Request getRequest() {
+		return request;
+	}
+
+	public void setRequest(Request request) {
+		this.request = request;
+	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
 
 	@Override
 	public String toString() {
-		return "Request [requestId=" + requestId + ", parentRequestId=" + parentRequestId + ", sharesFilled="
-				+ sharesFilled + ", shareholderId=" + shareholderId + ", requestDate=" + requestDate + ", buySell="
-				+ buySell + ", status=" + status + ", stockExId=" + stockExId + ", stockId=" + stockId + ", shares="
-				+ shares + ", minimumShares=" + minimumShares + ", timeInForce=" + timeInForce + ", limitPrice="
-				+ limitPrice + ", stopPrice=" + stopPrice + "]";
+		return "Request [requestId=" + requestId + ", request=" + request
+				+ ", sharesFilled=" + sharesFilled + ", person=" + person
+				+ ", requestDate=" + requestDate + ", buySell=" + buySell
+				+ ", status=" + status + ", company=" + company + ", shares="
+				+ shares + ", minimumShares=" + minimumShares
+				+ ", timeInForce=" + timeInForce + ", limitPrice=" + limitPrice
+				+ ", stopPrice=" + stopPrice + "]";
 	}
-
-	
 
 }

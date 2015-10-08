@@ -1,35 +1,28 @@
 package com.fdmgroup.tradingplatform.dao;
 
-import java.util.Set;
+import java.sql.SQLException;
 
 import com.fdmgroup.tradingplatform.bin.CurrentStockStats;
+import com.fdmgroup.tradingplatform.jdbc.CurrentStockStatsJDBC;
 
-public class CurrentStockStatsRAMDAO implements IStoreable<CurrentStockStats> {
+public class CurrentStockStatsRAMDAO {
 
-	private Set<CurrentStockStats> currentStockStatsSet;	
+	private CurrentStockStats currentStockStats;
 	
-	@Override
-	public void create(CurrentStockStats t) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public CurrentStockStats read(int id) {
-		// TODO Auto-generated method stub
+		
+		CurrentStockStatsJDBC CurrentStockStatsJDBC = new CurrentStockStatsJDBC();
+				
+		try {
+			currentStockStats = CurrentStockStatsJDBC.readRecords(id);
+			return currentStockStats;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
-	@Override
-	public void update(CurrentStockStats t) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(CurrentStockStats t) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

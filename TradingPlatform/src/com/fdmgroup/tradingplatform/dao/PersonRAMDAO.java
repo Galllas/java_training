@@ -3,7 +3,11 @@ package com.fdmgroup.tradingplatform.dao;
 import java.sql.SQLException;
 import java.util.Set;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
 import com.fdmgroup.tradingplatform.bin.Person;
+import com.fdmgroup.tradingplatform.bin.Role;
 import com.fdmgroup.tradingplatform.bin.SecurityRole;
 import com.fdmgroup.tradingplatform.jdbc.PersonJDBC;
 
@@ -11,45 +15,53 @@ public class PersonRAMDAO implements IStoreable<Person> {
 
 	private Set<Person> personSet;	
 	
+	EntityManagerFactory emf;
+	EntityManager em;
+
+	public void setEmf(EntityManagerFactory emf) {
+		this.emf = emf;
+	}
+	
 	@Override
 	public void create(Person t) {
-		PersonJDBC personJDBC = new PersonJDBC();
-		try {
-			personJDBC.createRecord(t);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+
+		em = emf.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(t);
+		em.getTransaction().commit();
+		em.close();
 	}
 
 	@Override
 	public Person read(int id) {
-		PersonJDBC personJDBC = new PersonJDBC();
-		try {
-			return personJDBC.readRecords(id);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return null;
+
+		em = emf.createEntityManager();
+		Person person = em.find(Person.class, id);
+		em.close();
+		return person;
 	}
 
 	@Override
 	public void update(Person t) {
-		PersonJDBC personJDBC = new PersonJDBC();
-		try {
-			personJDBC.updateRecord(t);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+
+		em = emf.createEntityManager();
+		Person person = em.find(Person.class, t.getPersonId());
+		em.getTransaction().begin();
+		em.remove(person);
+		em.persist(t);
+		em.getTransaction().commit();
+		em.close();
 	}
 
 	@Override
 	public void delete(Person t) {
-		PersonJDBC personJDBC = new PersonJDBC();
-		try {
-			personJDBC.deleteRecord(t);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+
+		em = emf.createEntityManager();
+		Person person = em.find(Person.class, t.getPersonId());
+		em.getTransaction().begin();
+		em.remove(person);
+		em.getTransaction().commit();	
+		em.close();
 	}
 
 }

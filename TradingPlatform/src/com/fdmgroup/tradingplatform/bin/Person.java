@@ -1,19 +1,45 @@
 package com.fdmgroup.tradingplatform.bin;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+
+@Entity
+@Table(name="PERSON")
 public class Person {
 	
+	@Id
+	@Column(name = "PERSON_ID")
 	private int personId;
-	private String password;
-	private String userName;
-	private String firstName;
-	private String lastName;
-	private List<Role> roles = new ArrayList<Role>();
 	
+	@Column(name = "PASSWORD")	
+	private String password;
+	
+	@Column(name = "USER_NAME")	
+	private String userName;
+
+	@Column(name = "FIRST_NAME")	
+	private String firstName;
+	
+	@Column(name = "LAST_NAME")	
+	private String lastName;
+	
+    @ManyToMany(fetch=FetchType.EAGER)
+    @JoinTable(name = "USER_ROLE", 
+               joinColumns = @JoinColumn(name = "UR_PERSON_ID", referencedColumnName="PERSON_ID"), 
+               inverseJoinColumns = @JoinColumn(name = "UR_ROLE_ID", referencedColumnName="ROLE_ID"))
+    private Set<Role> roles = new HashSet<Role>();
+
 	public Person(int personId, String password, String userName, String firstName, String lastName,
-			ArrayList<Role> roles) {
+			Set<Role> roles) {
 		super();
 		this.personId = personId;
 		this.password = password;
@@ -23,6 +49,10 @@ public class Person {
 		this.roles = roles;
 	}
 
+	public Person(){
+		
+	}
+	
 	public int getPersonId() {
 		return personId;
 	}
@@ -63,11 +93,11 @@ public class Person {
 		this.lastName = lastName;
 	}
 	
-	public List<Role> getRoles() {
+	public Set<Role> getRoles() {
 		return roles;
 	}
 	
-	public void setRoles(ArrayList<Role> roles) {
+	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
 

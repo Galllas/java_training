@@ -1,35 +1,33 @@
 package com.fdmgroup.tradingplatform.dao;
 
+import java.sql.SQLException;
+import java.util.HashSet;
 import java.util.Set;
 
-import com.fdmgroup.tradingplatform.bin.SecurityRole;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 
-public class SecurityRoleRAMDAO implements IStoreable<SecurityRole> {
+import com.fdmgroup.tradingplatform.bin.Company;
+import com.fdmgroup.tradingplatform.bin.SecurityRole;
+import com.fdmgroup.tradingplatform.jdbc.SecurityRoleJDBC;
+
+public class SecurityRoleRAMDAO {
 	
 	private Set<SecurityRole> securityRoleSet;
 	
-	@Override
-	public void create(SecurityRole t) {
-		// TODO Auto-generated method stub
+	public Set<SecurityRole> read(int id) {
 		
-	}
-
-	@Override
-	public SecurityRole read(int id) {
-		// TODO Auto-generated method stub
+		SecurityRoleJDBC securityRoleJDBC = new SecurityRoleJDBC();
+				
+		try {
+			securityRoleSet = securityRoleJDBC.readRecords(id);
+			return securityRoleSet;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return null;
-	}
-
-	@Override
-	public void update(SecurityRole t) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(SecurityRole t) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

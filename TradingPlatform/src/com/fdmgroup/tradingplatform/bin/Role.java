@@ -1,17 +1,41 @@
 package com.fdmgroup.tradingplatform.bin;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import com.fdmgroup.tradingplatform.interfaces.AddUser;
 import com.fdmgroup.tradingplatform.interfaces.MakeRequest;
 import com.fdmgroup.tradingplatform.interfaces.ViewPortfolio;
 
+@Entity
+@Table(name="ROLE")
 public class Role {
 
+	@Id
+	@Column(name = "ROLE_ID")
 	private int roleId;
+	
+	@Column(name = "ROLE_NAME")	
 	private String roleName;
+	
+	@Transient
 	MakeRequest makeRequest;
+	
+	@Transient	
 	ViewPortfolio viewPortfolio;
+	
+	@Transient
 	AddUser addUser;
+	
+	@Transient
 	RoleFactory roleFactory;
+	
+	public Role (){
+		
+	}
 	
 	public Role(RoleFactory roleFactory, String roleName){
 		this.roleName = roleName;
@@ -26,7 +50,6 @@ public class Role {
 		this(new RoleFactory(), roleName);
 		this.roleId = roleId;
 	}
-	
 	
 	public int getRoleId() {
 		return roleId;
@@ -74,6 +97,10 @@ public class Role {
 
 	public void setRoleFactory(RoleFactory roleFactory) {
 		this.roleFactory = roleFactory;
+		
+		makeRequest = roleFactory.createRequest(roleName);
+		viewPortfolio = roleFactory.createPortfolio(roleName);
+		addUser = roleFactory.createUser(roleName);
 	}
 
 	@Override

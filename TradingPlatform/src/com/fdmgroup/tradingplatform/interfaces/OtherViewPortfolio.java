@@ -19,7 +19,7 @@ public class OtherViewPortfolio implements ViewPortfolio {
 	Person person;
 	Set<Request> requests = new HashSet<Request>();
 	Set<Trade> trades = new HashSet<Trade>();
-	CurrentShareholderShares currentShareholderShares;
+	Set<CurrentShareholderShares> currentShareholderShares;
 	PersonRAMDAO personRAMDAO;
 	RequestRAMDAO requestRAMDAO;
 	TradeRAMDAO tradeRAMDAO;

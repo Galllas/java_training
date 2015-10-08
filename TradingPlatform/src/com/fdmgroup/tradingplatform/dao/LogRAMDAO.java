@@ -2,36 +2,37 @@ package com.fdmgroup.tradingplatform.dao;
 
 import java.sql.SQLException;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
 import com.fdmgroup.tradingplatform.bin.Person;
 import com.fdmgroup.tradingplatform.jdbc.PersonJDBC;
 
 public class LogRAMDAO {
 
-	public void create(Person t) {
-		// TODO Auto-generated method stub
-		
-	}
+	EntityManagerFactory emf;
 
+	public void setEmf(EntityManagerFactory emf) {
+		this.emf = emf;
+	}
+	
 	public Person read(String userName) {
 		
+		int id;
 		PersonJDBC personJDBC = new PersonJDBC();
+		
 		try {
-			return personJDBC.readRecords(userName);
+			id = personJDBC.readRecordId(userName);
+			PersonRAMDAO personRAMDAO = new PersonRAMDAO();
+			personRAMDAO.setEmf(emf);
+			Person person = personRAMDAO.read(id);
+			return person;
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
-	}
-
-	public void update(Person t) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void delete(Person t) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

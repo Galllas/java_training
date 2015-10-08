@@ -1,36 +1,32 @@
 package com.fdmgroup.tradingplatform.dao;
 
+import java.sql.SQLException;
+import java.util.HashSet;
 import java.util.Set;
 
 import com.fdmgroup.tradingplatform.bin.CurrentShareholderShares;
+import com.fdmgroup.tradingplatform.bin.SecurityRole;
+import com.fdmgroup.tradingplatform.jdbc.CurrentShareholderSharesJDBC;
+import com.fdmgroup.tradingplatform.jdbc.SecurityRoleJDBC;
 
-public class CurrentShareholderSharesRAMDAO implements
-		IStoreable<CurrentShareholderShares> {
+public class CurrentShareholderSharesRAMDAO  {
 
-	private Set<CurrentShareholderShares> currentShareholderSharesSet;	
+
+	private Set<CurrentShareholderShares> currentShareholderShares;
 	
-	@Override
-	public void create(CurrentShareholderShares t) {
-		// TODO Auto-generated method stub
+	public Set<CurrentShareholderShares> read(int id) {
 		
-	}
-
-	@Override
-	public CurrentShareholderShares read(int id) {
-		// TODO Auto-generated method stub
+		CurrentShareholderSharesJDBC currentShareholderSharesJDBC = new CurrentShareholderSharesJDBC();
+				
+		try {
+			currentShareholderShares = currentShareholderSharesJDBC.readRecords(id);
+			return currentShareholderShares;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return null;
-	}
-
-	@Override
-	public void update(CurrentShareholderShares t) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(CurrentShareholderShares t) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

@@ -1,50 +1,55 @@
 package com.fdmgroup.tradingplatform.jdbc;
 
-import java.awt.List;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Properties;
+import java.util.Set;
 
-import com.fdmgroup.tradingplatform.bin.Person;
-import com.fdmgroup.tradingplatform.bin.Role;
+import com.fdmgroup.tradingplatform.bin.SecurityRole;
 
-public class PersonJDBC {
-	
+public class SecurityRoleJDBC {
+
 	private Connection connection = null;
 	private Properties properties = null;
 	private PreparedStatement stmt = null;
 	
-	public int readRecordId(String userName) throws SQLException {
+	public Set<SecurityRole> readRecords(int id) throws SQLException {
 
 		String query;
-		Person person;
+		SecurityRole securityRole;
+		Set<SecurityRole> securityRoles = new HashSet<SecurityRole>();
 		
 		try {
 			connection = DBConnector.getConnection();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			return (Integer) null;
+			return null;
 			
 		}
 		properties = SQLProperties
 				.getProperties("dml.properties");
-		query = properties.getProperty("RetrievePersonByUsername");
+		
+		CallableStatement cs = connection.prepareCall("{call CREATE_SECURITYROLE_VIEW}");
+		cs.executeUpdate();		
+		
+		query = properties.getProperty("GetSecurityRole");
 
 		stmt = connection.prepareStatement(query);
-		stmt.setString(1, userName);
-		
+		stmt.setInt(1, id);
+
 		ResultSet rs = stmt.executeQuery();
 
 		while (rs.next()) {
 			
-			return rs.getInt(1);
+			securityRole = new SecurityRole(rs.getInt(1), rs.getString(2), rs.getInt(3));
+			securityRoles.add(securityRole);
 		}
-		return (Integer) null;
+		return securityRoles;
 	}
 	
+	
 }
-

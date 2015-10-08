@@ -6,6 +6,14 @@ public class CurrentStockStats {
 	private int currentAuthorized;
 	private int totalOutsatnding;
 	
+	public CurrentStockStats(int stockId, int currentAuthorized,
+			int totalOutsatnding) {
+		super();
+		this.stockId = stockId;
+		this.currentAuthorized = currentAuthorized;
+		this.totalOutsatnding = totalOutsatnding;
+	}
+
 	public int getStockId() {
 		return stockId;
 	}

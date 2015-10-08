@@ -22,8 +22,8 @@ public class AdministratorViewPortfolio implements ViewPortfolio {
 	Person person;
 	Set<Request> requests = new HashSet<Request>();
 	Set<Trade> trades = new HashSet<Trade>();
-	CurrentShareholderShares currentShareholderShares;
-	SecurityRole securityRole;
+	Set<CurrentShareholderShares> currentShareholderShares;
+	Set<SecurityRole> securityRoles;
 	PersonRAMDAO personRAMDAO;
 	RequestRAMDAO requestRAMDAO;
 	TradeRAMDAO tradeRAMDAO;
@@ -37,9 +37,9 @@ public class AdministratorViewPortfolio implements ViewPortfolio {
 		requests.add(requestRAMDAO.read(personId));
 		trades.add(tradeRAMDAO.read(personId));
 		currentShareholderShares = currentShareholderSharesRAMDAO.read(personId);
-		securityRole = securityRoleRAMDAO.read(personId);
+		securityRoles = securityRoleRAMDAO.read(personId);
 		
-		portfolio = new Portfolio(person, currentShareholderShares, securityRole, requests, trades);
+		portfolio = new Portfolio(person, currentShareholderShares, securityRoles, requests, trades);
 		
 		return portfolio;
 	}
