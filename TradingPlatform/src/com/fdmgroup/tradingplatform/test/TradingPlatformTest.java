@@ -39,12 +39,8 @@ public class TradingPlatformTest {
 
 	@Test
 	public void testMakeRequest() {
-		
-		CompanyRAMDAO companyRAMDAO = new CompanyRAMDAO();
-		companyRAMDAO.setEmf(tp.getEmf());
-		Company company = companyRAMDAO.read(2);
-		
-		tp.makeRequest(tp.getPersons().get(0), 0, null, 0, "BUY", null, company, 0,
+				
+		tp.makeRequest(tp.getPersons().get(0), 0, null, 0, "BUY", null, 2, 0,
 				0, null, null, null);
 		
 		try {
@@ -54,7 +50,7 @@ public class TradingPlatformTest {
 			e.printStackTrace();
 		}   
 		
-		tp.makeRequest(tp.getPersons().get(1), 0, null, 0, "SELL", null, company, 0,
+		tp.makeRequest(tp.getPersons().get(1), 0, null, 0, "SELL", null, 1, 0,
 				0, null, null, null);
 
 		assertEquals(tp.getRequestRAMDAO().read(1).getBuySell(), "BUY");

@@ -13,6 +13,7 @@ import javax.persistence.Persistence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import com.fdmgroup.tradingplatform.dao.CompanyRAMDAO;
 import com.fdmgroup.tradingplatform.dao.CurrentShareholderSharesRAMDAO;
 import com.fdmgroup.tradingplatform.dao.LogRAMDAO;
 import com.fdmgroup.tradingplatform.dao.PersonRAMDAO;
@@ -30,9 +31,12 @@ public class TradingPlatform {
 	TradeRAMDAO tradeRAMDAO = new TradeRAMDAO();
 	CurrentShareholderSharesRAMDAO currentShareholderSharesRAMDAO = new CurrentShareholderSharesRAMDAO();
 	SecurityRoleRAMDAO securityRoleRAMDAO = new SecurityRoleRAMDAO();
-	Request request;
+	CompanyRAMDAO companyRAMDAO = new CompanyRAMDAO();
 	Portfolio portfolio;
+	Company company;
+	Request request;
 	Person person;
+
 	
 	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	List<Person> persons = new ArrayList<Person>();
@@ -41,11 +45,13 @@ public class TradingPlatform {
 			Logger.getLogger(TradingPlatform.class);	
 	
 	public TradingPlatform(){	
+		
 		PropertyConfigurator.configure("log4j.properties");
 		logRAMDAO.setEmf(emf);
 		requestRAMDAO.setEmf(emf);
 		personRAMDAO.setEmf(emf);
 		tradeRAMDAO.setEmf(emf);
+		companyRAMDAO.setEmf(emf);
 	}
 
 	public List<Person> getPersons() {
@@ -118,8 +124,10 @@ public class TradingPlatform {
 	}	
 	
 	public void makeRequest(Person person, int requestId, Request request, int sharesFilled,
-			String buySell, String status, Company company, int shares, int minimumShares,
+			String buySell, String status, int companyId, int shares, int minimumShares,
 			String timeInForce, BigDecimal limitPrice, BigDecimal stopPrice){
+		
+		company = companyRAMDAO.read(companyId);
 		Set<Role> roles =  person.getRoles();
 		for (Role role : roles){
 			String time = df.format(new Date());
@@ -132,6 +140,7 @@ public class TradingPlatform {
 	}
 	
 	public Portfolio viewPortfolio(Person person){
+		
 		Set<Role> roles =  person.getRoles();
 		for (Role role : roles){
 			role.getViewPortfolio().setRequestRAMDAO(requestRAMDAO);
