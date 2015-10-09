@@ -24,7 +24,7 @@ public class Trade {
 	@Column(name = "TRADE_ID")
 	private int tradeId;
 	
-	@ManyToOne(cascade = {CascadeType.MERGE}, fetch=FetchType.EAGER)	
+	@ManyToOne(cascade = {CascadeType.MERGE})	
 	@JoinColumn(name = "STOCK_ID", referencedColumnName="STOCK_ID")	
 	private Company company;
 	
@@ -40,19 +40,19 @@ public class Trade {
 	@Column(name = "PRICE_TOTAL")
 	private BigDecimal priceTotal;
 	
-	@ManyToOne(cascade = {CascadeType.MERGE}, fetch=FetchType.EAGER)
+	@ManyToOne(cascade = {CascadeType.MERGE})
 	@JoinColumn(name = "SELLER_ID")
 	private Person person1;	
 	
-	@ManyToOne(cascade = {CascadeType.MERGE}, fetch=FetchType.EAGER)
+	@ManyToOne(cascade = {CascadeType.MERGE})
 	@JoinColumn(name = "BUYER_ID")
 	private Person person2;
 	
-	@ManyToOne(cascade = {CascadeType.MERGE}, fetch=FetchType.EAGER)	
+	@ManyToOne(cascade = {CascadeType.MERGE})	
 	@JoinColumn(name = "BUY_REQUEST_ID")
 	private Request request1;
 	
-	@ManyToOne(cascade = {CascadeType.MERGE}, fetch=FetchType.EAGER)	
+	@ManyToOne(cascade = {CascadeType.MERGE})	
 	@JoinColumn(name = "SELL_REQUEST_ID")
 	private Request request2;
 	
