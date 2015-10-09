@@ -1,9 +1,12 @@
 package com.fdmgroup.tradingplatform.bin;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,25 +20,25 @@ import javax.persistence.Table;
 @Table(name="REQUEST")
 public class Request {
 	
-	@SequenceGenerator(name="REQUEST_ID_SEQ", initialValue=1, allocationSize=50)
+	@SequenceGenerator(name="REQUEST_ID_SEQ", initialValue=1, allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="REQUEST_ID_SEQ")
 	@Id
 	@Column(name = "REQUEST_ID")
 	private int requestId;
 	
-	@ManyToOne	
+	@ManyToOne(cascade = {CascadeType.MERGE})	
 	@JoinColumn(name = "PARENT_REQUEST_ID")
 	private Request request;
 	
 	@Column(name = "SHARES_FILLED")
 	private int sharesFilled;
 	
-	@ManyToOne		
+	@ManyToOne(cascade = {CascadeType.MERGE})		
 	@JoinColumn(name = "SHAREHOLDER_ID")
 	private Person person;
 	
 	@Column(name = "REQUEST_DATE")
-	private String requestDate;
+	private Date requestDate;
 	
 	@Column(name = "BUY_SELL")
 	private String buySell;
@@ -43,8 +46,8 @@ public class Request {
 	@Column(name = "STATUS")
 	private String status;
 	
-	@ManyToOne	
-	@JoinColumn(name = "STOCK_ID", referencedColumnName="STOCK_ID")	
+	@ManyToOne(cascade = {CascadeType.MERGE})	
+	@JoinColumn(name = "STOCK_ID")	
 	private Company company;
 	
 	@Column(name = "SHARES")
@@ -62,12 +65,11 @@ public class Request {
 	@Column(name = "STOP_PRICE")
 	private BigDecimal stopPrice;
 
-	public Request(int requestId, Request request, int sharesFilled,
-			Person person, String requestDate, String buySell, String status,
+	public Request(Request request, int sharesFilled,
+			Person person, Date requestDate, String buySell, String status,
 			Company company, int shares, int minimumShares, String timeInForce,
 			BigDecimal limitPrice, BigDecimal stopPrice) {
 		super();
-		this.requestId = requestId;
 		this.request = request;
 		this.sharesFilled = sharesFilled;
 		this.person = person;
@@ -90,10 +92,6 @@ public class Request {
 		return requestId;
 	}
 
-	public void setRequestId(int requestId) {
-		this.requestId = requestId;
-	}
-
 	public int getSharesFilled() {
 		return sharesFilled;
 	}
@@ -102,11 +100,11 @@ public class Request {
 		this.sharesFilled = sharesFilled;
 	}
 
-	public String getRequestDate() {
+	public Date getRequestDate() {
 		return requestDate;
 	}
 
-	public void setRequestDate(String requestDate) {
+	public void setRequestDate(Date requestDate) {
 		this.requestDate = requestDate;
 	}
 

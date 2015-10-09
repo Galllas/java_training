@@ -1,5 +1,7 @@
 package com.fdmgroup.tradingplatform.dao;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.EntityManager;
@@ -10,10 +12,10 @@ import com.fdmgroup.tradingplatform.bin.Request;
 
 public class RequestRAMDAO implements IStoreable<Request> {
 
-	private Set<Request> requestSet;
+	private Set<Request> requestSet = new HashSet<Request>();
 	
-	EntityManagerFactory emf;
-	EntityManager em;
+	private EntityManagerFactory emf;
+	private EntityManager em;
 
 	public void setEmf(EntityManagerFactory emf) {
 		this.emf = emf;
@@ -61,4 +63,15 @@ public class RequestRAMDAO implements IStoreable<Request> {
 		em.close();
 	}
 
+	public Set<Request> read(Person person){
+		
+		em = emf.createEntityManager();
+		List<Request> results = em.createQuery("SELECT o FROM Request o WHERE o.person.personId =:Id")
+				.setParameter("Id", person.getPersonId()).getResultList();
+		for(Request request : results){
+			requestSet.add(request);
+		}
+		return requestSet;
+	}
+	
 }

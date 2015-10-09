@@ -11,17 +11,18 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import static org.mockito.Mockito.verify;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import com.fdmgroup.tradingplatform.bin.Company;
 import com.fdmgroup.tradingplatform.bin.Portfolio;
 import com.fdmgroup.tradingplatform.bin.TradingPlatform;
-import com.fdmgroup.tradingplatform.dao.CompanyRAMDAO;
+
 
 public class TradingPlatformTest {
 
-	TradingPlatform tp;
+	private TradingPlatform tp;
+	private Portfolio portfolio;
 
 	@Before
 	public void setUp() throws Exception {
@@ -39,34 +40,28 @@ public class TradingPlatformTest {
 
 	@Test
 	public void testMakeRequest() {
-				
-		tp.makeRequest(tp.getPersons().get(0), 0, null, 0, "BUY", null, 2, 0,
-				0, null, null, null);
 		
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}   
-		
-		tp.makeRequest(tp.getPersons().get(1), 0, null, 0, "SELL", null, 1, 0,
-				0, null, null, null);
+		tp.makeRequest(tp.getPersons().get(0), 0, null, 0, "BUY", "ACTIVE", 2, 0,
+				0, "DAY ONLY", null, null);  
+		tp.makeRequest(tp.getPersons().get(1), 0, null, 0, "SELL", "ACTIVE", 1, 0,
+				0, "DAY ONLY", null, null);
 
-		assertEquals(tp.getRequestRAMDAO().read(1).getBuySell(), "BUY");
-		assertEquals(tp.getRequestRAMDAO().read(2).getBuySell(), "SELL");		
+		assertEquals(tp.getRequestRAMDAO().read(49).getBuySell(), "BUY");
+		assertEquals(tp.getRequestRAMDAO().read(50).getBuySell(), "SELL");		
 	}
 	
 	@Test
-	public void testViewPortfolio() {
+	public void testViewPortfolio1() {
 		
-		Portfolio portfolio;
 		portfolio = tp.viewPortfolio(tp.getPersons().get(0));	
-		assertEquals(portfolio.getRequests().size(), 1);
-		
-		portfolio = tp.viewPortfolio(tp.getPersons().get(1));
-		assertEquals(portfolio.getRequests().size(), 1);
+		assertEquals(portfolio.getTrades().size(), 0);
 	}	
 	
+	@Test
+	public void testViewPortfolio2() {
+		
+		portfolio = tp.viewPortfolio(tp.getPersons().get(1));	
+		assertEquals(portfolio.getTrades().size(), 0);
+	}	
 	
 }

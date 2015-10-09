@@ -12,8 +12,8 @@ public class RoleRAMDAO implements IStoreable<Role> {
 
 	private Set<Role> roleSet;	
 	
-	EntityManagerFactory emf;
-	EntityManager em;
+	private EntityManagerFactory emf;
+	private EntityManager em;
 
 	public void setEmf(EntityManagerFactory emf) {
 		this.emf = emf;

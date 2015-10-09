@@ -10,7 +10,7 @@ import com.fdmgroup.tradingplatform.jdbc.PersonJDBC;
 
 public class LogRAMDAO {
 
-	EntityManagerFactory emf;
+	private EntityManagerFactory emf;
 
 	public void setEmf(EntityManagerFactory emf) {
 		this.emf = emf;

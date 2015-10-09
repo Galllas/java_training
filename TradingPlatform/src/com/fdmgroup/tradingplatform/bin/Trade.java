@@ -2,8 +2,10 @@ package com.fdmgroup.tradingplatform.bin;
 
 import java.math.BigDecimal;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,7 +24,7 @@ public class Trade {
 	@Column(name = "TRADE_ID")
 	private int tradeId;
 	
-	@ManyToOne	
+	@ManyToOne(cascade = {CascadeType.MERGE}, fetch=FetchType.EAGER)	
 	@JoinColumn(name = "STOCK_ID", referencedColumnName="STOCK_ID")	
 	private Company company;
 	
@@ -38,19 +40,19 @@ public class Trade {
 	@Column(name = "PRICE_TOTAL")
 	private BigDecimal priceTotal;
 	
-	@ManyToOne			
+	@ManyToOne(cascade = {CascadeType.MERGE}, fetch=FetchType.EAGER)
 	@JoinColumn(name = "SELLER_ID")
 	private Person person1;	
 	
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.MERGE}, fetch=FetchType.EAGER)
 	@JoinColumn(name = "BUYER_ID")
 	private Person person2;
 	
-	@ManyToOne	
+	@ManyToOne(cascade = {CascadeType.MERGE}, fetch=FetchType.EAGER)	
 	@JoinColumn(name = "BUY_REQUEST_ID")
 	private Request request1;
 	
-	@ManyToOne	
+	@ManyToOne(cascade = {CascadeType.MERGE}, fetch=FetchType.EAGER)	
 	@JoinColumn(name = "SELL_REQUEST_ID")
 	private Request request2;
 	

@@ -33,8 +33,8 @@ public class SecurityRoleJDBC {
 		properties = SQLProperties
 				.getProperties("dml.properties");
 		
-		CallableStatement cs = connection.prepareCall("{call CREATE_SECURITYROLE_VIEW}");
-		cs.executeUpdate();		
+	//	CallableStatement cs = connection.prepareCall("{call CREATE_SECURITYROLE_VIEW}");
+	//	cs.executeUpdate();		
 		
 		query = properties.getProperty("GetSecurityRole");
 

@@ -1,6 +1,7 @@
 package com.fdmgroup.tradingplatform.interfaces;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 import com.fdmgroup.tradingplatform.bin.Company;
 import com.fdmgroup.tradingplatform.bin.Person;
@@ -13,10 +14,10 @@ public class OtherRequest implements MakeRequest {
 	
 	@Override
 	public Request makeRequest(int requestId, Request request, int sharesFilled, Person person,
-			String requestDate, String buySell, String status, Company company, int shares,
+			Date requestDate, String buySell, String status, Company company, int shares,
 			int minimumShares, String timeInForce, BigDecimal limitPrice, BigDecimal stopPrice) {
 		
-		Request newRequest = new Request( requestId, request, sharesFilled,
+		Request newRequest = new Request( request, sharesFilled,
 				person, requestDate, buySell, status,
 			 company, shares, minimumShares, timeInForce, limitPrice, stopPrice);
 		

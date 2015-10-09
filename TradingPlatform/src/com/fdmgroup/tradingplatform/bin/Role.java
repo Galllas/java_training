@@ -22,16 +22,16 @@ public class Role {
 	private String roleName;
 	
 	@Transient
-	MakeRequest makeRequest;
+	private MakeRequest makeRequest;
 	
 	@Transient	
-	ViewPortfolio viewPortfolio;
+	private ViewPortfolio viewPortfolio;
 	
 	@Transient
-	AddUser addUser;
+	private AddUser addUser;
 	
 	@Transient
-	RoleFactory roleFactory;
+	private RoleFactory roleFactory = new RoleFactory();
 	
 	public Role (){
 		

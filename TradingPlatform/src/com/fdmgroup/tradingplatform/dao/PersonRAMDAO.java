@@ -15,8 +15,8 @@ public class PersonRAMDAO implements IStoreable<Person> {
 
 	private Set<Person> personSet;	
 	
-	EntityManagerFactory emf;
-	EntityManager em;
+	private EntityManagerFactory emf;
+	private EntityManager em;
 
 	public void setEmf(EntityManagerFactory emf) {
 		this.emf = emf;

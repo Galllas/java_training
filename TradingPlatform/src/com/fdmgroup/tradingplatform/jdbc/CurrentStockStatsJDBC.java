@@ -34,8 +34,8 @@ public class CurrentStockStatsJDBC {
 		properties = SQLProperties
 				.getProperties("dml.properties");
 			
-		CallableStatement cs = connection.prepareCall("{call CREATE_STOCK_STATS_VIEW}");
-		cs.executeUpdate();	
+	//	CallableStatement cs = connection.prepareCall("{call CREATE_STOCK_STATS_VIEW}");
+	//	cs.executeUpdate();	
 		
 		query = properties.getProperty("GetStock");
 

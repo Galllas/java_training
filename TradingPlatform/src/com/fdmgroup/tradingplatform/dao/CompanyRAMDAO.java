@@ -11,8 +11,8 @@ public class CompanyRAMDAO implements IStoreable<Company> {
 
 	private Set<Company> companySet;
 	
-	EntityManagerFactory emf;
-	EntityManager em;
+	private EntityManagerFactory emf;
+	private EntityManager em;
 
 	public void setEmf(EntityManagerFactory emf) {
 		this.emf = emf;

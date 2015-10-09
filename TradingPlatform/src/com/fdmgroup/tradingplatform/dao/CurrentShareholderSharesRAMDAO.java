@@ -11,7 +11,6 @@ import com.fdmgroup.tradingplatform.jdbc.SecurityRoleJDBC;
 
 public class CurrentShareholderSharesRAMDAO  {
 
-
 	private Set<CurrentShareholderShares> currentShareholderShares;
 	
 	public Set<CurrentShareholderShares> read(int id) {

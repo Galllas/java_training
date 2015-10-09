@@ -24,22 +24,21 @@ import com.fdmgroup.tradingplatform.dao.TradeRAMDAO;
 
 public class TradingPlatform {
 
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("storejpa");;
-	LogRAMDAO logRAMDAO = new LogRAMDAO();
-	RequestRAMDAO requestRAMDAO = new RequestRAMDAO();
-	PersonRAMDAO personRAMDAO = new PersonRAMDAO();
-	TradeRAMDAO tradeRAMDAO = new TradeRAMDAO();
-	CurrentShareholderSharesRAMDAO currentShareholderSharesRAMDAO = new CurrentShareholderSharesRAMDAO();
-	SecurityRoleRAMDAO securityRoleRAMDAO = new SecurityRoleRAMDAO();
-	CompanyRAMDAO companyRAMDAO = new CompanyRAMDAO();
-	Portfolio portfolio;
-	Company company;
-	Request request;
-	Person person;
-
+	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("storejpa");;
+	private LogRAMDAO logRAMDAO = new LogRAMDAO();
+	private RequestRAMDAO requestRAMDAO = new RequestRAMDAO();
+	private PersonRAMDAO personRAMDAO = new PersonRAMDAO();
+	private TradeRAMDAO tradeRAMDAO = new TradeRAMDAO();
+	private CurrentShareholderSharesRAMDAO currentShareholderSharesRAMDAO = new CurrentShareholderSharesRAMDAO();
+	private SecurityRoleRAMDAO securityRoleRAMDAO = new SecurityRoleRAMDAO();
+	private CompanyRAMDAO companyRAMDAO = new CompanyRAMDAO();
+	private Portfolio portfolio;
+	private Company company;
+	private Request request;
+	private Person person;
 	
-	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	List<Person> persons = new ArrayList<Person>();
+	private SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	private List<Person> persons = new ArrayList<Person>();
 
 	static Logger log = 
 			Logger.getLogger(TradingPlatform.class);	
@@ -130,11 +129,11 @@ public class TradingPlatform {
 		company = companyRAMDAO.read(companyId);
 		Set<Role> roles =  person.getRoles();
 		for (Role role : roles){
-			String time = df.format(new Date());
+			Date time = new Date();
+			role.setRoleFactory(new RoleFactory());
 			role.getMakeRequest().setRequestRAMDAO(requestRAMDAO);
 			request = role.getMakeRequest().makeRequest(requestId, request, sharesFilled, person, time,
 					buySell, status, company, shares, minimumShares, timeInForce, limitPrice, stopPrice);
-			requestRAMDAO.create(request);
 			log.info("Request Made. " + person + " " + request);
 		}	
 	}
@@ -143,9 +142,12 @@ public class TradingPlatform {
 		
 		Set<Role> roles =  person.getRoles();
 		for (Role role : roles){
+			role.setRoleFactory(new RoleFactory());
 			role.getViewPortfolio().setRequestRAMDAO(requestRAMDAO);
 			role.getViewPortfolio().setPersonRAMDAO(personRAMDAO);
 			role.getViewPortfolio().setTradeRAMDAO(tradeRAMDAO);		
+			role.getViewPortfolio().setCurrentShareholderSharesRAMDAO(currentShareholderSharesRAMDAO);
+			role.getViewPortfolio().setSecurityRoleRAMDAO(securityRoleRAMDAO);
 			portfolio = role.getViewPortfolio().viewPortfolio(person.getPersonId());
 			log.info("Portfolio Viewed. " + person + " " + portfolio);
 		}	

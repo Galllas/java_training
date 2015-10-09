@@ -16,22 +16,22 @@ import com.fdmgroup.tradingplatform.dao.TradeRAMDAO;
 
 public class OtherViewPortfolio implements ViewPortfolio {
 
-	Portfolio portfolio;
-	Person person;
-	Set<Request> requests = new HashSet<Request>();
-	Set<Trade> trades = new HashSet<Trade>();
-	Set<CurrentShareholderShares> currentShareholderShares;
-	PersonRAMDAO personRAMDAO;
-	RequestRAMDAO requestRAMDAO;
-	TradeRAMDAO tradeRAMDAO;
-	CurrentShareholderSharesRAMDAO currentShareholderSharesRAMDAO;
+	private Portfolio portfolio;
+	private Person person;
+	private Set<Request> requests = new HashSet<Request>();
+	private Set<Trade> trades = new HashSet<Trade>();
+	private Set<CurrentShareholderShares> currentShareholderShares;
+	private PersonRAMDAO personRAMDAO;
+	private RequestRAMDAO requestRAMDAO;
+	private TradeRAMDAO tradeRAMDAO;
+	private CurrentShareholderSharesRAMDAO currentShareholderSharesRAMDAO;
 
 	@Override
 	public Portfolio viewPortfolio(int personId) {
 		
 		person = personRAMDAO.read(personId);
-		requests.add(requestRAMDAO.read(personId));
-		trades.add(tradeRAMDAO.read(personId));
+		requests = requestRAMDAO.read(person);
+		trades = tradeRAMDAO.read(person);
 		currentShareholderShares = currentShareholderSharesRAMDAO.read(personId);
 		portfolio = new Portfolio(person, currentShareholderShares, null, requests, trades);
 		

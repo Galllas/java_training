@@ -10,9 +10,9 @@ import com.fdmgroup.tradingplatform.interfaces.ViewPortfolio;
 
 public class RoleFactory {
 
-	MakeRequest makeRequest;
-	ViewPortfolio viewPortfolio;
-	AddUser addUser;
+	private MakeRequest makeRequest;
+	private ViewPortfolio viewPortfolio;
+	private AddUser addUser;
 	
 	public MakeRequest createRequest(String type){
 		if (type.equals("Shareholder")){
