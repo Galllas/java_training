@@ -11,6 +11,7 @@ import com.fdmgroup.tradingplatform.bin.Trade;
 import com.fdmgroup.tradingplatform.dao.CurrentShareholderSharesRAMDAO;
 import com.fdmgroup.tradingplatform.dao.PersonRAMDAO;
 import com.fdmgroup.tradingplatform.dao.RequestRAMDAO;
+import com.fdmgroup.tradingplatform.dao.SecurityRoleRAMDAO;
 import com.fdmgroup.tradingplatform.dao.TradeRAMDAO;
 
 public class OtherViewPortfolio implements ViewPortfolio {
@@ -67,6 +68,12 @@ public class OtherViewPortfolio implements ViewPortfolio {
 
 	public void setCurrentShareholderSharesRAMDAO(CurrentShareholderSharesRAMDAO currentShareholderSharesRAMDAO) {
 		this.currentShareholderSharesRAMDAO = currentShareholderSharesRAMDAO;
+	}
+
+	@Override
+	public void setSecurityRoleRAMDAO(SecurityRoleRAMDAO securityRoleRAMDAO) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

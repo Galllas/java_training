@@ -13,22 +13,30 @@ import javax.persistence.Persistence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import com.fdmgroup.tradingplatform.dao.CurrentShareholderSharesRAMDAO;
 import com.fdmgroup.tradingplatform.dao.LogRAMDAO;
+import com.fdmgroup.tradingplatform.dao.PersonRAMDAO;
 import com.fdmgroup.tradingplatform.dao.RequestRAMDAO;
 import com.fdmgroup.tradingplatform.dao.RoleRAMDAO;
+import com.fdmgroup.tradingplatform.dao.SecurityRoleRAMDAO;
+import com.fdmgroup.tradingplatform.dao.TradeRAMDAO;
 
 public class TradingPlatform {
 
-	List<Person> persons = new ArrayList<Person>();
 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("storejpa");;
 	LogRAMDAO logRAMDAO = new LogRAMDAO();
 	RequestRAMDAO requestRAMDAO = new RequestRAMDAO();
+	PersonRAMDAO personRAMDAO = new PersonRAMDAO();
+	TradeRAMDAO tradeRAMDAO = new TradeRAMDAO();
+	CurrentShareholderSharesRAMDAO currentShareholderSharesRAMDAO = new CurrentShareholderSharesRAMDAO();
+	SecurityRoleRAMDAO securityRoleRAMDAO = new SecurityRoleRAMDAO();
 	Request request;
 	Portfolio portfolio;
 	Person person;
 	
 	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	
+	List<Person> persons = new ArrayList<Person>();
+
 	static Logger log = 
 			Logger.getLogger(TradingPlatform.class);	
 	
@@ -36,6 +44,8 @@ public class TradingPlatform {
 		PropertyConfigurator.configure("log4j.properties");
 		logRAMDAO.setEmf(emf);
 		requestRAMDAO.setEmf(emf);
+		personRAMDAO.setEmf(emf);
+		tradeRAMDAO.setEmf(emf);
 	}
 
 	public List<Person> getPersons() {
@@ -44,6 +54,54 @@ public class TradingPlatform {
 
 	public void setPersons(List<Person> persons) {
 		this.persons = persons;
+	}
+
+	public EntityManagerFactory getEmf() {
+		return emf;
+	}
+
+	public void setEmf(EntityManagerFactory emf) {
+		this.emf = emf;
+	}
+	
+	public RequestRAMDAO getRequestRAMDAO() {
+		return requestRAMDAO;
+	}
+
+	public void setRequestRAMDAO(RequestRAMDAO requestRAMDAO) {
+		this.requestRAMDAO = requestRAMDAO;
+	}
+
+	public PersonRAMDAO getPersonRAMDAO() {
+		return personRAMDAO;
+	}
+
+	public void setPersonRAMDAO(PersonRAMDAO personRAMDAO) {
+		this.personRAMDAO = personRAMDAO;
+	}
+
+	public TradeRAMDAO getTradeRAMDAO() {
+		return tradeRAMDAO;
+	}
+
+	public void setTradeRAMDAO(TradeRAMDAO tradeRAMDAO) {
+		this.tradeRAMDAO = tradeRAMDAO;
+	}
+
+	public CurrentShareholderSharesRAMDAO getCurrentShareholderSharesRAMDAO() {
+		return currentShareholderSharesRAMDAO;
+	}
+
+	public void setCurrentShareholderSharesRAMDAO(CurrentShareholderSharesRAMDAO currentShareholderSharesRAMDAO) {
+		this.currentShareholderSharesRAMDAO = currentShareholderSharesRAMDAO;
+	}
+
+	public SecurityRoleRAMDAO getSecurityRoleRAMDAO() {
+		return securityRoleRAMDAO;
+	}
+
+	public void setSecurityRoleRAMDAO(SecurityRoleRAMDAO securityRoleRAMDAO) {
+		this.securityRoleRAMDAO = securityRoleRAMDAO;
 	}
 
 	public void loginPerson(String password, String userName){ 
@@ -65,6 +123,7 @@ public class TradingPlatform {
 		Set<Role> roles =  person.getRoles();
 		for (Role role : roles){
 			String time = df.format(new Date());
+			role.getMakeRequest().setRequestRAMDAO(requestRAMDAO);
 			request = role.getMakeRequest().makeRequest(requestId, request, sharesFilled, person, time,
 					buySell, status, company, shares, minimumShares, timeInForce, limitPrice, stopPrice);
 			requestRAMDAO.create(request);
@@ -72,12 +131,16 @@ public class TradingPlatform {
 		}	
 	}
 	
-	public void viewPortfolio(Person person){
+	public Portfolio viewPortfolio(Person person){
 		Set<Role> roles =  person.getRoles();
 		for (Role role : roles){
+			role.getViewPortfolio().setRequestRAMDAO(requestRAMDAO);
+			role.getViewPortfolio().setPersonRAMDAO(personRAMDAO);
+			role.getViewPortfolio().setTradeRAMDAO(tradeRAMDAO);		
 			portfolio = role.getViewPortfolio().viewPortfolio(person.getPersonId());
 			log.info("Portfolio Viewed. " + person + " " + portfolio);
 		}	
+		return portfolio;
 	}
 	
 	
