@@ -1,0 +1,96 @@
+
+#TPLogo{
+	
+	background-image: url("main.jpg");
+	height: 550px;
+	text-align: center;
+	color: white;
+	padding: 0px;
+}
+
+#Logo{
+	
+	content: url("logo-TP.jpg") no-repeat scroll 1% 65%;
+	height : 100px;
+}
+
+#rightheadertop{
+	right: 20px;
+	top: 20px;
+	position: absolute;	
+}
+
+#rightheaderbottom{
+	right: 30px;
+	top: 65px;
+	position: absolute;	
+}
+
+#phonenum{
+	font-family: arial, helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color:#00aeef;
+}
+
+.registerbutton{
+	background: #DCDCDC;
+	font-family: arial, helvetica, sans-serif;
+	border-radius: 10px;
+	height: 25px;
+	text-align: center;
+	font-size: 12px;	
+	color: #696969;
+	border: 1px solid #D3D3D3;
+	cursor: pointer;
+}
+
+.loginbutton{
+	background-color: #DCDCDC;
+	font-family: arial, helvetica, sans-serif;
+	border-radius: 10px;
+	height: 25px;
+	text-align: center;
+	font-size: 12px;
+	color: #696969;
+	border: 1px solid #D3D3D3;
+	cursor: pointer;
+}
+
+.loginbutton:hover { 
+    background-color: #00aeef;
+	color: white;
+}
+
+.registerbutton:hover { 
+    background-color: #00aeef;
+	color: white;
+}
+
+/* navigation bar : start */
+nav div	{width: 80%; margin-left: auto; margin-right: auto;}
+nav ul 	{list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		}
+nav li		{width: 20%; float: left;}
+nav a:link, 
+nav a:visited 	{
+				display: block;
+				width: 100%;
+				font-weight: bold;
+				color: #F6D55D;
+				background-color: MidnightBlue;
+				text-align: center;
+				padding: 1%;
+				text-decoration: none;
+				text-transform: uppercase;
+				}
+nav a:hover, 
+nav a:active 		{
+				color: MidnightBlue;
+				background-color: #F6D55D;
+				}
+/* navigation bar : end */
+

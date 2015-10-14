@@ -828,3 +828,219 @@
 2015-10-09 17:49:07 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
 
 2015-10-09 17:49:07 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 10:37:14 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 10:37:14 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 10:37:14 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 10:37:17 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table REQUEST add constraint FK_f9f8760ce8ce406fa270f7c41c4 foreign key (SHAREHOLDER_ID) references PERSON
+2015-10-12 10:37:17 ERROR SchemaUpdate:237 - ORA-02298: cannot validate (TRAINEE1.FK_F9F8760CE8CE406FA270F7C41C4) - parent keys not found
+
+2015-10-12 10:37:17 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_4d98488d08024abc95100ab3d95 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 10:37:17 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 10:37:17 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_962a7d3f04dd471a9426ee118d1 foreign key (SELLER_ID) references PERSON
+2015-10-12 10:37:17 ERROR SchemaUpdate:237 - ORA-02298: cannot validate (TRAINEE1.FK_962A7D3F04DD471A9426EE118D1) - parent keys not found
+
+2015-10-12 10:37:17 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_04385b4d6b2746feb0bdfe26c84 foreign key (BUYER_ID) references PERSON
+2015-10-12 10:37:17 ERROR SchemaUpdate:237 - ORA-02298: cannot validate (TRAINEE1.FK_04385B4D6B2746FEB0BDFE26C84) - parent keys not found
+
+2015-10-12 10:37:17 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 10:37:17 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 10:37:17 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 10:37:17 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 10:37:17 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table REQUEST add constraint FK_25eca115df7e45c0b2ef9e98a70 foreign key (SHAREHOLDER_ID) references PERSON
+2015-10-12 10:37:17 ERROR SchemaUpdate:237 - ORA-02298: cannot validate (TRAINEE1.FK_25ECA115DF7E45C0B2EF9E98A70) - parent keys not found
+
+2015-10-12 10:37:17 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_9119c605f8de41ca822a3c3eb51 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 10:37:17 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 10:37:17 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_06792c2676ea4ab8b7fb3b52496 foreign key (SELLER_ID) references PERSON
+2015-10-12 10:37:17 ERROR SchemaUpdate:237 - ORA-02298: cannot validate (TRAINEE1.FK_06792C2676EA4AB8B7FB3B52496) - parent keys not found
+
+2015-10-12 10:37:17 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_0e023b12f5754a98a4ce7ecae6d foreign key (BUYER_ID) references PERSON
+2015-10-12 10:37:17 ERROR SchemaUpdate:237 - ORA-02298: cannot validate (TRAINEE1.FK_0E023B12F5754A98A4CE7ECAE6D) - parent keys not found
+
+2015-10-12 10:37:17 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 10:37:17 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 10:37:17 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 10:37:17 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 10:37:17 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table REQUEST add constraint FK_8938634738c143bb894225068c3 foreign key (SHAREHOLDER_ID) references PERSON
+2015-10-12 10:37:17 ERROR SchemaUpdate:237 - ORA-02298: cannot validate (TRAINEE1.FK_8938634738C143BB894225068C3) - parent keys not found
+
+2015-10-12 10:37:17 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_c518a48bf3e342178ee4ba3f6ff foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 10:37:17 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 10:37:17 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_de8a98e276314f62a19fad28cab foreign key (SELLER_ID) references PERSON
+2015-10-12 10:37:17 ERROR SchemaUpdate:237 - ORA-02298: cannot validate (TRAINEE1.FK_DE8A98E276314F62A19FAD28CAB) - parent keys not found
+
+2015-10-12 10:37:17 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_b0960416aa7e4d4986bf8eadcaf foreign key (BUYER_ID) references PERSON
+2015-10-12 10:37:17 ERROR SchemaUpdate:237 - ORA-02298: cannot validate (TRAINEE1.FK_B0960416AA7E4D4986BF8EADCAF) - parent keys not found
+
+2015-10-12 10:37:17 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 10:42:17 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 10:42:17 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 10:42:17 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 10:42:18 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_1b53697e08ec40bd88e997fc5de foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 10:42:18 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 10:42:18 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 10:42:18 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 10:42:18 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 10:42:18 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 10:42:18 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_d10d857816344827b6917cbb65b foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 10:42:18 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 10:42:18 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 10:42:18 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 10:42:18 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 10:42:18 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 10:42:18 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_e8ebb345dad440c5809addc8673 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 10:42:18 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 10:42:18 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 11:30:31 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 11:30:31 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 11:30:31 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 11:30:31 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_6c66a748a84f496d8e3fa6767df foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 11:30:31 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 11:30:31 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 11:30:31 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 11:30:31 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 11:30:31 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 11:30:31 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_65e2dfc78be14c67a5b5d9cccbc foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 11:30:31 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 11:30:31 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 11:30:31 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 11:30:31 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 11:30:31 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 11:30:31 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_5d216717dbfc4ccdb9dbe0e8290 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 11:30:31 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 11:30:31 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 12:52:51 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 12:52:51 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 12:52:51 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 12:52:51 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_683d788e0e0440e8bb3975955e0 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 12:52:51 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 12:52:51 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 12:52:51 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 12:52:51 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 12:52:51 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 12:52:51 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_108ef0ff8f404dc1b1c62bd4a14 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 12:52:51 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 12:52:51 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 12:52:52 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 12:52:52 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 12:52:52 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 12:52:52 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_0ebea20d9dc24da0b07dc0d134a foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 12:52:52 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 12:52:52 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 12:53:15 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 12:53:15 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 12:53:15 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 12:53:15 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_49aaef19f47548708ab8a64c7e6 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 12:53:15 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 12:53:15 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 12:53:15 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 12:53:15 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 12:53:15 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 12:53:15 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_494fee2cbd9d4ac79ffea984061 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 12:53:15 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 12:53:15 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-12 12:53:15 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-12 12:53:15 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-12 12:53:15 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-12 12:53:15 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_100a2f5f407c4df0bde016e1691 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-12 12:53:15 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-12 12:53:15 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-14 10:00:25 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-14 10:00:25 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-14 10:00:25 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-14 10:00:25 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_956c9e335e384809ac3209d5be5 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-14 10:00:25 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-14 10:00:25 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-14 10:00:25 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-14 10:00:25 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-14 10:00:25 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-14 10:00:25 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_979b7e04477b455fa1f251cff5d foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-14 10:00:25 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-14 10:00:25 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-14 10:00:25 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-14 10:00:25 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-14 10:00:25 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-14 10:00:25 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_0744b6451e1a45b59700115f759 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-14 10:00:25 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-14 10:00:25 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-14 10:01:19 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-14 10:01:19 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-14 10:01:19 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-14 10:01:19 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_7978ceaeb8cc494696ee7263ca8 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-14 10:01:19 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-14 10:01:19 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-14 10:01:19 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-14 10:01:19 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-14 10:01:19 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-14 10:01:19 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_58d77892cd3f46dc92cb3c1f6ac foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-14 10:01:19 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-14 10:01:19 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-14 10:01:20 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-14 10:01:20 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-14 10:01:20 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-14 10:01:20 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_4c9e8778181740bc8e49d35185a foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-14 10:01:20 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-14 10:01:20 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-14 10:01:57 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-14 10:01:57 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-14 10:01:57 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-14 10:01:57 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_e1d7838c7508472f8c73b18f637 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-14 10:01:57 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-14 10:01:57 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-14 10:01:57 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-14 10:01:57 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-14 10:01:57 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-14 10:01:57 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_5df0f7db0d5840eb81dfccd38d6 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-14 10:01:57 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-14 10:01:57 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-14 10:01:57 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-14 10:01:57 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-14 10:01:57 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-14 10:01:57 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_3cfd4948a43549a9aff32f817d3 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-14 10:01:57 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-14 10:01:57 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-14 10:02:25 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-14 10:02:25 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-14 10:02:25 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-14 10:02:25 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_702b9f959bad48b386574fe950e foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-14 10:02:25 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-14 10:02:25 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-14 10:02:25 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-14 10:02:25 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-14 10:02:25 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-14 10:02:25 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_776a2ad85d1c4346a8943ac9adf foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-14 10:02:25 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-14 10:02:25 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-14 10:02:25 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-14 10:02:25 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-14 10:02:25 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-14 10:02:25 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_97b7c5c57e95462f9b47f87541e foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-14 10:02:25 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-14 10:02:25 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'

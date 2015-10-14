@@ -39,6 +39,7 @@ public class TradingPlatformTest {
 	}
 
 	@Test
+	
 	public void testMakeRequest() {
 		
 		tp.makeRequest(tp.getPersons().get(0), 0, null, 0, "BUY", "ACTIVE", 2, 0,
@@ -46,8 +47,8 @@ public class TradingPlatformTest {
 		tp.makeRequest(tp.getPersons().get(1), 0, null, 0, "SELL", "ACTIVE", 1, 0,
 				0, "DAY ONLY", null, null);
 
-		assertEquals(tp.getRequestRAMDAO().read(49).getBuySell(), "BUY");
-		assertEquals(tp.getRequestRAMDAO().read(50).getBuySell(), "SELL");		
+		assertEquals(tp.getRequestRAMDAO().read(5).getBuySell(), "BUY");
+		assertEquals(tp.getRequestRAMDAO().read(6).getBuySell(), "SELL");		
 	}
 	
 	@Test

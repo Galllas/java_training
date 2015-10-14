@@ -33,8 +33,8 @@ public class CurrentShareholderSharesJDBC {
 		properties = SQLProperties
 				.getProperties("dml.properties");
 		
-	//	CallableStatement cs = connection.prepareCall("{call CREATE_SHAREHOLDER_SHARES_VIEW}");
-	//	cs.executeUpdate();
+		CallableStatement cs = connection.prepareCall("{call CREATE_SHAREHOLDER_SHARES_VIEW}");
+		cs.executeUpdate();
 	
 		query = properties.getProperty("GetShares");
 
