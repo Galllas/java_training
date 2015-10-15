@@ -1,7 +1,0 @@
-Colours 
-Blue-  #00aeef
-Grey - Subheading and body text : #666666
-
-Fonts
-Arial: various font weights
-Times New Roman – subheading only
