@@ -5,17 +5,17 @@ import javax.persistence.Persistence;
 
 public class EntityFactory {
 	
-	private static EntityManagerFactory instance;
+	private static EntityManagerFactory emf;
 	
 	private  EntityFactory () {
 		
 	}
 	
-	public static EntityManagerFactory getInstance(){
-		if(instance == null){
-			instance = Persistence.createEntityManagerFactory("storejpa");
+	public static EntityManagerFactory getEmf(){
+		if(emf == null){
+			emf = Persistence.createEntityManagerFactory("storejpa");
 		}
-		return instance;
+		return emf;
 	}
 	
 }

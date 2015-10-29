@@ -12,15 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.fdmgroup.tradingplatform.bin.Person;
 
 /**
- * Servlet implementation class LoginPage
+ * Servlet implementation class RequestPage
  */
-public class LoginPage extends HttpServlet {
+
+public class RequestPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginPage() {
+    public RequestPage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,17 +30,27 @@ public class LoginPage extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setHeader("Cache-Control","no-cache"); 
+		response.setHeader("Cache-Control","no-store"); 
+		response.setDateHeader("Expires", 0); 
+		response.setHeader("Pragma","no-cache");
 		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("TPLogin");
-		requestDispatcher.forward(request, response);
+		Person person = (Person) request.getSession().getAttribute("person");
+		if(person == null){
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("TPLogin");
+			requestDispatcher.forward(request, response);
+		}
+		else {
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("MakeRequest");
+			requestDispatcher.forward(request, response);
+		}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		
+		// TODO Auto-generated method stub
 	}
 
 }

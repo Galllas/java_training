@@ -36,7 +36,12 @@ public class AdministratorViewPortfolio implements ViewPortfolio {
 		person = personRAMDAO.read(personId);
 		requests = requestRAMDAO.read(person);
 		trades = tradeRAMDAO.read(person);
-		currentShareholderShares = currentShareholderSharesRAMDAO.read(personId);
+		try {
+			currentShareholderShares = currentShareholderSharesRAMDAO.read(personId);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		securityRoles = securityRoleRAMDAO.read(personId);
 		
 		portfolio = new Portfolio(person, currentShareholderShares, securityRoles, requests, trades);

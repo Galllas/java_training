@@ -1,11 +1,13 @@
 package com.fdmgroup.tradingplatform.dao;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 import com.fdmgroup.tradingplatform.bin.Company;
+import com.fdmgroup.tradingplatform.bin.Person;
 
 public class CompanyRAMDAO implements IStoreable<Company> {
 
@@ -60,4 +62,18 @@ public class CompanyRAMDAO implements IStoreable<Company> {
 		em.close();
 	}
 
+	public Company readByStockId(int id){
+		em = emf.createEntityManager();
+		
+		List<Company> results = em.createQuery("SELECT c FROM Company c WHERE c.stockId =:Id")
+				.setParameter("Id", id).getResultList();
+		if(results.size() == 0){
+			return null;
+		}
+		else {
+			return results.get(0);
+		}
+		
+	}
+	
 }

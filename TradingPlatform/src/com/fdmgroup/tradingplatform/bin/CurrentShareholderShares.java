@@ -39,7 +39,7 @@ public class CurrentShareholderShares {
 
 	@Override
 	public String toString() {
-		return "CurrentShareholderShares [shareholderId=" + shareholderId + ", stockId=" + stockId + ", shares="
+		return "CurrentShares [stockId=" + stockId + ", shares="
 				+ shares + "]";
 	}
 	

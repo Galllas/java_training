@@ -17,28 +17,18 @@ public class CurrentShareholderSharesJDBC {
 	private Properties properties = null;
 	private PreparedStatement stmt = null;
 	
-	public Set<CurrentShareholderShares> readRecords(int id) throws SQLException {
-
+	public Set<CurrentShareholderShares> readRecords(int id) throws SQLException, ClassNotFoundException {
 		String query;
 		CurrentShareholderShares currentShareholderShare;
 		Set<CurrentShareholderShares> currentShareholderShares = new HashSet<CurrentShareholderShares>();
 		
-		try {
-			connection = DBConnector.getConnection();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-			return null;
-			
-		}
-		properties = SQLProperties
-				.getProperties("dml.properties");
-		
+		connection = DBConnector.getConnection();
+	
 		CallableStatement cs = connection.prepareCall("{call CREATE_SHAREHOLDER_SHARES_VIEW}");
 		cs.executeUpdate();
 	
-		query = properties.getProperty("GetShares");
 
-		stmt = connection.prepareStatement(query);
+		stmt = connection.prepareStatement("SELECT * FROM current_shareholder_shares WHERE shareholder_id = ?");
 		stmt.setInt(1, id);
 
 		ResultSet rs = stmt.executeQuery();

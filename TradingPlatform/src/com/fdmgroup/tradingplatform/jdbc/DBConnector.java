@@ -18,28 +18,18 @@ public class DBConnector {
 		if (connection != null)
 			return connection;
 		else {
-			try {
-				Properties properties = new Properties();
-				FileInputStream input = new FileInputStream(
-						"dbproperties");
-				properties.load(input);
-				
-				String url = properties.getProperty("url");
-				String user = properties.getProperty("user");
-				String password = properties.getProperty("password");
+			Properties properties = new Properties();
+//				FileInputStream input = new FileInputStream(
+//						"dbproperties");
+//				properties.load(input);
+			
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String user = "trainee1";
+			String password = "!QAZSE4";
 
-				DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+			DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
 
-				connection = DriverManager.getConnection(url, user, password);
-				
-
-				input.close();
-
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			connection = DriverManager.getConnection(url, user, password);
 
 
 

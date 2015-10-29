@@ -47,7 +47,7 @@ public class Request {
 	private String status;
 	
 	@ManyToOne(cascade = {CascadeType.MERGE})	
-	@JoinColumn(name = "STOCK_ID")	
+	@JoinColumn(name = "STOCK_ID", referencedColumnName="STOCK_ID")	
 	private Company company;
 	
 	@Column(name = "SHARES")
@@ -191,9 +191,9 @@ public class Request {
 	@Override
 	public String toString() {
 		return "Request [requestId=" + requestId + ", request=" + request
-				+ ", sharesFilled=" + sharesFilled + ", person=" + person
+				+ ", sharesFilled=" + sharesFilled + ", personId=" + person.getPersonId()
 				+ ", requestDate=" + requestDate + ", buySell=" + buySell
-				+ ", status=" + status + ", company=" + company + ", shares="
+				+ ", status=" + status + ", companyId=" + company.getCompanyId() + ", shares="
 				+ shares + ", minimumShares=" + minimumShares
 				+ ", timeInForce=" + timeInForce + ", limitPrice=" + limitPrice
 				+ ", stopPrice=" + stopPrice + "]";

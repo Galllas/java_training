@@ -20,6 +20,10 @@ public class Portfolio {
 		this.trades = trades;
 	}
 
+	public Portfolio() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Person getPerson() {
 		return person;
 	}

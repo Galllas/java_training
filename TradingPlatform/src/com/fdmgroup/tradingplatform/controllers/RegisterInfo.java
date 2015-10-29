@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.jboss.logging.Logger;
 import com.fdmgroup.tradingplatform.bin.Person;
 
 /**
@@ -17,6 +18,7 @@ import com.fdmgroup.tradingplatform.bin.Person;
 
 public class RegisterInfo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	static Logger log = Logger.getLogger("RegisterInfo");	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -50,6 +52,7 @@ public class RegisterInfo extends HttpServlet {
 		
 		request.setAttribute("person", person);
 		
+		log.info("User Registered! " + person);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Registersuccess");
 		dispatcher.forward(request, response);
 	}

@@ -24,7 +24,7 @@ public class Trade {
 	@Column(name = "TRADE_ID")
 	private int tradeId;
 	
-	@ManyToOne(cascade = {CascadeType.MERGE})	
+	@ManyToOne(cascade = {CascadeType.MERGE})
 	@JoinColumn(name = "STOCK_ID", referencedColumnName="STOCK_ID")	
 	private Company company;
 	
@@ -157,11 +157,11 @@ public class Trade {
 
 	@Override
 	public String toString() {
-		return "Trade [tradeId=" + tradeId + ", company=" + company
+		return "Trade [tradeId=" + tradeId + ", company=" + company.getCompanyId()
 				+ ", transactionTime=" + transactionTime + ", shares=" + shares
 				+ ", sharePrice=" + sharePrice + ", priceTotal=" + priceTotal
-				+ ", person1=" + person1 + ", person2=" + person2
-				+ ", request1=" + request1 + ", request2=" + request2 + "]";
+				+ ", sellerId=" + person1.getPersonId() + ", buyerId=" + person2.getPersonId()
+				+ ", sell requestId=" + request2.getRequestId() + ", buy requestId=" + request1.getRequestId() + "]";
 	}
 	
 }

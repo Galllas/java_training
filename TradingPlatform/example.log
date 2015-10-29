@@ -1128,3 +1128,248 @@
 2015-10-22 12:23:04 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
 
 2015-10-22 12:23:04 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-22 14:57:05 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-22 14:57:05 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-22 14:57:05 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-22 14:57:05 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_4df01d7c902e4df0ac6a0f43611 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-22 14:57:05 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-22 14:57:05 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-22 14:57:05 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-22 14:57:05 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-22 14:57:05 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-22 14:57:05 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_a0298f5ebf9243669e60ac94d8a foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-22 14:57:05 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-22 14:57:05 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-22 14:57:06 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-22 14:57:06 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-22 14:57:06 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-22 14:57:06 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_7bbf73be08434a90b631258562e foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-22 14:57:06 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-22 14:57:06 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-22 14:57:23 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-22 14:57:23 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-22 14:57:23 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-22 14:57:24 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_8cc940ba73374758bfe6eb5c34a foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-22 14:57:24 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-22 14:57:24 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-22 14:57:24 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-22 14:57:24 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-22 14:57:24 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-22 14:57:24 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_8812d3590c204c7aa30cb2016a1 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-22 14:57:24 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-22 14:57:24 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-22 14:57:24 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-22 14:57:24 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-22 14:57:24 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-22 14:57:24 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_e2c0763acdce44dcb1cf5017f96 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-22 14:57:24 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-22 14:57:24 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-22 14:58:15 ERROR TradingPlatform:116 - Wrong Username or Password.
+2015-10-22 14:58:15 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-22 14:58:15 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-22 14:58:15 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-22 14:58:15 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_3ebf3575939b4992a6ead70f9b7 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-22 14:58:15 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-22 14:58:15 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-22 14:58:15 ERROR TradingPlatform:116 - Wrong Username or Password.
+2015-10-22 14:58:16 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-22 14:58:16 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-22 14:58:16 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-22 14:58:16 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_c7b9963e0c0841f2ba93df5a90b foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-22 14:58:16 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-22 14:58:16 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-22 14:58:16 ERROR TradingPlatform:116 - Wrong Username or Password.
+2015-10-22 14:58:16 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-22 14:58:16 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-22 14:58:16 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-22 14:58:16 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_e88fe626b2d9405bb7de534f903 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-22 14:58:16 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-22 14:58:16 WARN  EntityManagerFactoryRegistry:80 - HHH000436: Entity manager factory name (storejpa) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2015-10-22 14:58:16 ERROR TradingPlatform:116 - Wrong Username or Password.
+2015-10-22 15:26:50 ERROR TradingPlatform:116 - Wrong Username or Password.
+2015-10-22 15:48:11 ERROR TradingPlatform:116 - Wrong Username or Password.
+2015-10-28 11:18:43 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 11:18:43 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 11:18:43 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 11:18:44 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_0944a5003fa04c34a143eac432f foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 11:18:44 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 11:23:51 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 11:23:52 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 11:23:52 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 11:23:52 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_8bfc99d37d644517b8f05e23d69 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 11:23:52 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 11:28:45 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 11:28:45 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 11:28:45 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 11:28:46 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_d6c482ca6c644fa9a6ddc8e6a1e foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 11:28:46 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 11:29:35 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 11:29:35 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 11:29:35 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 11:29:36 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_6d07d2a3cc594151813bfaa7a42 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 11:29:36 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 11:40:42 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 11:40:42 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 11:40:42 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 11:40:43 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_e491490266c34988915942f7b1c foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 11:40:43 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 12:22:20 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 12:22:21 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 12:22:21 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 12:22:21 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_b129ea9fb2bd4241962914053e4 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 12:22:21 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 12:22:35 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 12:22:35 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 12:22:35 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 12:22:36 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_aca485a4bc694ed5b8080a8027b foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 12:22:36 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 12:24:51 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 12:24:51 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 12:24:51 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 12:24:52 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_23e493d83abd47b886f925f05fc foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 12:24:52 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 12:25:20 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 12:25:20 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 12:25:20 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 12:25:21 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_f3a445c4d7004471bf8b80d1333 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 12:25:21 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 12:25:51 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 12:25:51 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 12:25:51 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 12:25:52 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_d7211b6a7e7040e9b018716fb2a foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 12:25:52 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 12:27:14 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 12:27:14 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 12:27:14 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 12:27:15 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_8a7c38064ad34e8bb6fd1ebe04d foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 12:27:15 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 12:27:21 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 12:27:21 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 12:27:21 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 12:27:22 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_420030edac444c4185793c2c539 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 12:27:22 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 12:29:11 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 12:29:11 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 12:29:11 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 12:29:12 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_c7e3b645d59c49fd977b258a160 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 12:29:12 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 12:30:27 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 12:30:40 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 12:54:28 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 12:54:28 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 12:54:28 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 12:54:29 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_7968b81f65a14ba294152a12500 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 12:54:29 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 12:58:23 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 12:58:24 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 12:58:24 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 12:58:24 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_b361541d683a4dd0ab4c5de6793 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 12:58:24 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 17:44:45 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 17:44:46 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 17:44:46 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 17:44:46 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_499de2841ef84b1ca42dad77b8a foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 17:44:46 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-28 17:45:22 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-28 17:45:23 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-28 17:45:23 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-28 17:45:24 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_fd45453361e44c58aa08fb60989 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-28 17:45:24 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 14:30:26 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-29 14:30:27 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-29 14:30:27 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-29 14:30:33 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table REQUEST add constraint FK_183494c489704876bed4cafaee1 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 14:30:33 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 14:30:33 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_8dfbd61a677c4c659b287160400 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 14:30:33 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 14:33:25 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-29 14:33:25 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-29 14:33:25 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-29 14:33:26 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table REQUEST add constraint FK_7cedc7745ba841b18864fc6c135 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 14:33:26 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 14:33:26 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_f5f44b6be3914ce280e64d36901 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 14:33:26 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 14:41:42 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-29 14:41:43 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-29 14:41:43 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-29 14:41:44 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table REQUEST add constraint FK_da3daaf2db354eecba706758884 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 14:41:44 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 14:41:44 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_7f1687c0d04b4043800a048ac6a foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 14:41:44 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 14:59:47 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-29 14:59:47 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-29 14:59:47 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-29 14:59:48 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table REQUEST add constraint FK_ca27195e1d8e4732af631127a0e foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 14:59:48 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 14:59:48 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_92a2965bd1db48b3b3c6a92d63b foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 14:59:48 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 15:01:46 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-29 15:01:46 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-29 15:01:46 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-29 15:01:47 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table REQUEST add constraint FK_b7ea1d9096b54ca8bcd52b637df foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 15:01:47 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 15:01:47 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_4c1ecb1f931c4538a9fc88c706d foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 15:01:47 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 15:36:45 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-29 15:36:46 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-29 15:36:46 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-29 15:36:47 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table REQUEST add constraint FK_c31c18489a204b8abfe520f4474 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 15:36:47 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 15:36:47 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_d4eec359274e4cd88b7ca8016db foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 15:36:47 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 17:34:35 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-29 17:34:35 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-29 17:34:35 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-29 17:34:36 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table REQUEST add constraint FK_a8ba9326e648498180419e4f824 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 17:34:36 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 17:34:36 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_a0ad3405ad58426b89fbc80f7c9 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 17:34:36 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 17:34:53 WARN  ConnectionProviderInitiator:201 - HHH000022: c3p0 properties were encountered, but the org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider provider class was not found on the classpath; these properties are going to be ignored.
+2015-10-29 17:34:53 WARN  Oracle9Dialect:62 - HHH000063: The Oracle9Dialect dialect has been deprecated; use either Oracle9iDialect or Oracle10gDialect instead
+2015-10-29 17:34:53 WARN  OracleDialect:48 - HHH000064: The OracleDialect dialect has been deprecated; use Oracle8iDialect instead
+2015-10-29 17:34:54 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table REQUEST add constraint FK_ead2aad6c27b4204a7d4c8887d4 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 17:34:54 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+
+2015-10-29 17:34:54 ERROR SchemaUpdate:236 - HHH000388: Unsuccessful: alter table TRADE add constraint FK_09c4fd89196e4542864fe925ba2 foreign key (STOCK_ID) references COMPANY (STOCK_ID)
+2015-10-29 17:34:54 ERROR SchemaUpdate:237 - ORA-02275: such a referential constraint already exists in the table
+

@@ -24,7 +24,7 @@ import com.fdmgroup.tradingplatform.dao.TradeRAMDAO;
 
 public class TradingPlatform {
 
-	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("storejpa");;
+	private EntityManagerFactory emf;
 	private LogRAMDAO logRAMDAO = new LogRAMDAO();
 	private RequestRAMDAO requestRAMDAO = new RequestRAMDAO();
 	private PersonRAMDAO personRAMDAO = new PersonRAMDAO();
@@ -105,6 +105,22 @@ public class TradingPlatform {
 		return securityRoleRAMDAO;
 	}
 
+	public LogRAMDAO getLogRAMDAO() {
+		return logRAMDAO;
+	}
+
+	public void setLogRAMDAO(LogRAMDAO logRAMDAO) {
+		this.logRAMDAO = logRAMDAO;
+	}
+
+	public CompanyRAMDAO getCompanyRAMDAO() {
+		return companyRAMDAO;
+	}
+
+	public void setCompanyRAMDAO(CompanyRAMDAO companyRAMDAO) {
+		this.companyRAMDAO = companyRAMDAO;
+	}
+
 	public void setSecurityRoleRAMDAO(SecurityRoleRAMDAO securityRoleRAMDAO) {
 		this.securityRoleRAMDAO = securityRoleRAMDAO;
 	}
@@ -143,6 +159,9 @@ public class TradingPlatform {
 		Set<Role> roles =  person.getRoles();
 		for (Role role : roles){
 			role.setRoleFactory(new RoleFactory());
+			personRAMDAO.setEmf(emf);
+			requestRAMDAO.setEmf(emf);
+			tradeRAMDAO.setEmf(emf);
 			role.getViewPortfolio().setRequestRAMDAO(requestRAMDAO);
 			role.getViewPortfolio().setPersonRAMDAO(personRAMDAO);
 			role.getViewPortfolio().setTradeRAMDAO(tradeRAMDAO);		

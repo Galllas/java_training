@@ -16,15 +16,21 @@
 			<span id="phonenum">&nbsp Call TP 800 800 8000</span>
 		</div>
 		<div id="rightheaderbottom">
-			<a href="TPLogin"><input class="registerbutton" type="submit" id="loginbutt" value="Login"/></a>
+			<a href="LogOff"><input class="registerbutton" type="submit" id="loginbutt" value="LogOff"/></a>
 			&nbsp
 			<a href="TPregister"><input class="registerbutton" type="submit" id ="registerbutt" value="Register"/></a>
 		</div>
 	</header>
 
-
-Welcome Back!</br>
-${requestScope.person}
+	Welcome Back!</br></br>
+	${
+	sessionScope.person}</br>
+	</br>
+	Actions:</br>
+	<button onclick="window.location.href='RequestPage'">Make Request</button>
+	<button onclick="window.location.href='ViewPortfolio'">View Portfolio</button>
+	<button onclick="window.location.href='ViewTrade'">View Trade History</button>
+	<button onclick="window.location.href='ViewRequest'">View Outstanding Requests</button>
 
 				<footer>
 	<div class="footer-social">

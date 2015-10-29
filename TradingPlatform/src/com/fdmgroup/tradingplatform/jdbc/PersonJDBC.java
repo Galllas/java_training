@@ -43,7 +43,7 @@ public class PersonJDBC {
 			
 			return rs.getInt(1);
 		}
-		return (Integer) null;
+		return -1;
 	}
 	
 }

@@ -16,25 +16,18 @@
 			<span id="phonenum">&nbsp Call TP 800 800 8000</span>
 		</div>
 		<div id="rightheaderbottom">
-			<a href=""><input class="loginbutton" type="submit" id="loginbutt" value="Login"/></a>
+			<a href="LogOff"><input class="registerbutton" type="submit" id="loginbutt" value="LogOff"/></a>
 			&nbsp
 			<a href="TPregister"><input class="registerbutton" type="submit" id ="registerbutt" value="Register"/></a>
 		</div>
 	</header>
+	<button onclick="history.back()">Go Back</button></br></br>
+	
+	<% %>
+	
+	Invalid Values!</br></br>
 
-			<div class="inputLogin">
-			<h1 class="sectionlabel">Login</h1>
-			<form class="login" id="bigform" method="post" action="LoginInfo">
-				<input class="inputfieldtext" type="text" id="username" placeholder="Username" name="username" required> <br><br>
-				<input class="inputfieldtext" type="password" id="password" placeholder="Password" name="password" required> <br><br>
-				
-				<p class="checkboxtext"> <input class="checkboxlook" type="checkbox" value="confirm"> Remember me &nbsp&nbsp 
-				<div id="regbutt"><input class="registerbutton" type="submit" value="Login" id="logbu"/></div>
-				</p>
-				<a class="hyperlinktext" href="">Lost your password? </a><br><br>
-				<a class="hyperlinktext" href="TPregister">Register </a>
-			</form>
-		</div>
+
 				<footer>
 	<div class="footer-social">
 		<li><a href="http://www.facebook.com">

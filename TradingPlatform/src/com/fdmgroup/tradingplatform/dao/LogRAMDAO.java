@@ -1,11 +1,13 @@
 package com.fdmgroup.tradingplatform.dao;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 import com.fdmgroup.tradingplatform.bin.Person;
+import com.fdmgroup.tradingplatform.bin.Request;
 import com.fdmgroup.tradingplatform.jdbc.PersonJDBC;
 
 public class LogRAMDAO {
@@ -16,23 +18,19 @@ public class LogRAMDAO {
 		this.emf = emf;
 	}
 	
+	private EntityManager em;
+	
 	public Person read(String userName) {
 		
-		int id;
-		PersonJDBC personJDBC = new PersonJDBC();
-		
-		try {
-			id = personJDBC.readRecordId(userName);
-			PersonRAMDAO personRAMDAO = new PersonRAMDAO();
-			personRAMDAO.setEmf(emf);
-			Person person = personRAMDAO.read(id);
-			return person;
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		em = emf.createEntityManager();
+		List<Person> results = em.createQuery("SELECT p FROM Person p WHERE p.userName =:Name")
+				.setParameter("Name", userName).getResultList();
+		if(results.size() == 0){
+			return null;
 		}
-		return null;
+		else {
+			return results.get(0);
+		}
 	}
 
 }

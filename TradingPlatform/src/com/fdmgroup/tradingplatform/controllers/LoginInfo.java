@@ -10,6 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.PropertyConfigurator;
+import org.jboss.logging.Logger;
 
 import com.fdmgroup.tradingplatform.bin.EntityFactory;
 import com.fdmgroup.tradingplatform.bin.Person;
@@ -21,6 +25,8 @@ import com.fdmgroup.tradingplatform.jdbc.PersonJDBC;
  * Servlet implementation class LoginInfo
  */
 public class LoginInfo extends HttpServlet {
+	
+	static Logger log = Logger.getLogger("LoginInfo");	
 	
 	private LogRAMDAO logRAMDAO = new LogRAMDAO();
 	
@@ -45,31 +51,41 @@ public class LoginInfo extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
-		Person person = new Person();
-		person.setUserName(username);
-		person.setPassword(password);
+		logRAMDAO.setEmf(EntityFactory.getEmf());
+		Person person = logRAMDAO.read(username);
 		
-		//emf = EntityFactory.getInstance();
-//		logRAMDAO.setEmf(EntityFactory.getInstance());
-//		Person person = logRAMDAO.read(username);
-		
-//		if (person == null || !person.getPassword().equals(password)){
-//			
-//			String error = "Wrong Username or Password!";
-//			
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("Logfail");
-//			dispatcher.forward(request, response);
-//		}
-//		else 
-//		{
-			request.setAttribute("person", person);
+		if (person == null || !person.getPassword().equals(password)){
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("Logsuccess");
+			String error = "Wrong Username or Password!";
+			
+			request.setAttribute("error", error);
+			log.info("Wrong Username or Password!");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Loginfail");
 			dispatcher.forward(request, response);
-//		}
+		}
+		else if(person.getRoles().size() >= 2)
+		{
+			HttpSession session=request.getSession();  
+			session.setAttribute("person", person);
+			log.info("User Login! " + person);
+			response.sendRedirect("TwoLogin");	
+		}
+		else if(person.getRoles().iterator().next().getRoleId() == 1){
+			HttpSession session=request.getSession();  
+			session.setAttribute("person", person);
+			log.info("User Login! " + person);
+			response.sendRedirect("ShLogin");	
+		}
+		else {
+			HttpSession session=request.getSession();  
+			session.setAttribute("person", person);
+			log.info("User Login! " + person);
+			response.sendRedirect("AdLogin");	
+		}
 //		
 	}
 

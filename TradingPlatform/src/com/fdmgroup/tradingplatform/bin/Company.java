@@ -1,5 +1,6 @@
 package com.fdmgroup.tradingplatform.bin;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
@@ -9,8 +10,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="COMPANY")
-public class Company {
+public class Company implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column(name = "COMPANY_ID")
 	private int companyId;

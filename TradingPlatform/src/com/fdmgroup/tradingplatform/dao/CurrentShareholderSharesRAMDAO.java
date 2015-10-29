@@ -13,7 +13,7 @@ public class CurrentShareholderSharesRAMDAO  {
 
 	private Set<CurrentShareholderShares> currentShareholderShares;
 	
-	public Set<CurrentShareholderShares> read(int id) {
+	public Set<CurrentShareholderShares> read(int id) throws ClassNotFoundException {
 		
 		CurrentShareholderSharesJDBC currentShareholderSharesJDBC = new CurrentShareholderSharesJDBC();
 				
@@ -23,7 +23,7 @@ public class CurrentShareholderSharesRAMDAO  {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} 
 		
 		return null;
 	}

@@ -65,6 +65,7 @@ public class RequestRAMDAO implements IStoreable<Request> {
 
 	public Set<Request> read(Person person){
 		
+		requestSet = new HashSet<Request>();
 		em = emf.createEntityManager();
 		List<Request> results = em.createQuery("SELECT o FROM Request o WHERE o.person.personId =:Id")
 				.setParameter("Id", person.getPersonId()).getResultList();

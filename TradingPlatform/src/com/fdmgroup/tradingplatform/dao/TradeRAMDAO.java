@@ -66,12 +66,19 @@ public class TradeRAMDAO implements IStoreable<Trade> {
 
 	public Set<Trade> read(Person person){
 		
+		tradeSet = new HashSet<Trade>();
 		em = emf.createEntityManager();
 		List<Trade> results = em.createQuery("SELECT o FROM Trade o WHERE o.person2.personId =:Id")
                .setParameter("Id", person.getPersonId()).getResultList();
 		for(Trade trade : results){
 			tradeSet.add(trade);
 		}
+		
+		results = em.createQuery("SELECT o FROM Trade o WHERE o.person1.personId =:Id")
+	               .setParameter("Id", person.getPersonId()).getResultList();
+			for(Trade trade : results){
+				tradeSet.add(trade);
+			}						
 		return tradeSet;
 	}
 	
